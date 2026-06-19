@@ -321,7 +321,7 @@
 // ============================================================
 const WEEK_LABEL = "Неделя 22/06-28/06 · 2026";
 
-// King of the shift
+// King of the restaurant
 const KING = {
   name: "Эрен Йегер",
   meta: "· 3 недели в топе",
@@ -347,56 +347,56 @@ const METRICS = {
 // ============ PASTE YOUR WEEKLY DATA HERE ============
 // Each manager appears once. Values per metric.
 const MANAGERS = [
-  {name:"Брызгалов Артём",       speed:18.2, problem:1.1, productivity:142, cx:9.4, clients:9.6},
-  {name:"Гутор Валерия",      speed:19.0, problem:1.4, productivity:138, cx:9.2, clients:9.1},
-  {name:"Усова Алина",     speed:20.1, problem:1.2, productivity:135, cx:9.0, clients:8.9},
-  {name:"Степанова Александра",       speed:21.3, problem:1.3, productivity:130, cx:8.8, clients:9.2},
-  {name:"Селюкова Екатерина",       speed:22.0, problem:1.8, productivity:128, cx:8.6, clients:8.5},
-  {name:"Степанов Даниил",     speed:21.8, problem:1.6, productivity:125, cx:8.7, clients:8.8},
-  {name:"Козлова Людмила",     speed:23.5, problem:2.1, productivity:120, cx:8.4, clients:8.3},
-  {name:"Бахромкин Константин",       speed:22.4, problem:1.9, productivity:118, cx:8.5, clients:8.6},
-  {name:"Финченко Артём",      speed:24.0, problem:2.3, productivity:115, cx:8.2, clients:8.1},
-  {name:"Строк Ксения",   speed:23.1, problem:2.0, productivity:113, cx:8.3, clients:8.4},
-  {name:"Корепина Наталия",        speed:24.8, problem:2.4, productivity:110, cx:8.0, clients:8.0},
-  {name:"Андрусов Олег",       speed:25.0, problem:2.6, productivity:108, cx:7.9, clients:7.8},
-  {name:"Лыткина Татьяна",     speed:25.5, problem:2.8, productivity:105, cx:7.7, clients:7.9},
-  {name:"Гришанова Диана",      speed:26.1, problem:2.5, productivity:103, cx:7.8, clients:7.7},
-  {name:"Гаврилица Олег",       speed:26.8, problem:3.0, productivity:100, cx:7.6, clients:7.5},
-  {name:"Дубчак Максим",    speed:27.0, problem:3.1, productivity:98,  cx:7.5, clients:7.6},
-  {name:"Ядловский Кирилл",       speed:27.5, problem:3.3, productivity:96,  cx:7.4, clients:7.3},
-  {name:"Кирюшова Наталия",       speed:28.0, problem:3.5, productivity:94,  cx:7.3, clients:7.2},
-  {name:"Прокашев Дмитрий",       speed:28.5, problem:3.7, productivity:92,  cx:7.1, clients:7.0},
-  {name:"Куприянов Константин",     speed:29.0, problem:3.8, productivity:90,  cx:7.0, clients:7.1},
-  {name:"Вебер Ксения",       speed:29.5, problem:4.0, productivity:88,  cx:6.9, clients:6.8},
-  {name:"Леликова Мария",     speed:30.0, problem:4.2, productivity:86,  cx:6.8, clients:6.9},
-  {name:"Симонов Олег",     speed:30.5, problem:4.5, productivity:84,  cx:6.7, clients:6.6},
-  {name:"Кузнецов Фёдор",    speed:31.0, problem:4.7, productivity:82,  cx:6.5, clients:6.5},
-  {name:"Корниенко Даниил", speed:31.5, problem:5.0, productivity:80,  cx:6.4, clients:6.3},
-  {name:"Тошова Амина",    speed:32.0, problem:5.2, productivity:78,  cx:6.3, clients:6.2},
-  {name:"Небесная Анастасия",      speed:32.5, problem:5.5, productivity:76,  cx:6.2, clients:6.1},
-  {name:"Добрянская Анастасия",   speed:33.0, problem:5.8, productivity:74,  cx:6.0, clients:6.0},
-  {name:"Тарасов Алексей",       speed:33.5, problem:6.0, productivity:72,  cx:5.9, clients:5.8},
-  {name:"Сафронова Ольга",   speed:34.0, problem:6.3, productivity:70,  cx:5.8, clients:5.7},
-  {name:"Кузахметова Кристина",         speed:34.5, problem:6.5, productivity:68,  cx:5.7, clients:5.6},
-  {name:"Парфёнова Дарья",     speed:35.0, problem:6.8, productivity:66,  cx:5.5, clients:5.5},
-  {name:"Хомячук Александра",     speed:35.5, problem:7.0, productivity:64,  cx:5.4, clients:5.3},
-  {name:"Максютов Данила",   speed:36.0, problem:7.3, productivity:62,  cx:5.3, clients:5.2},
-  {name:"Бекенев Александр",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Мустафина Эвелина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Макеева Мария",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Фролов Вадим",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Вельможин Владислав",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Буранбаева Екатерина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Абдрахимова Римма",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Латыпова Эльвира",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Гафиятуллина Юлия",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Нигматуллина Элона", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Назаров Айгизар", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Раева Айгиза", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Афанасьева Ангелина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Волкодав Лейля",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Пальцева Кристина",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Галлямов Ильнур",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Брызгалов Артём", restaurant:"12-1",   speed:18.2, problem:1.1, productivity:142, cx:9.4, clients:9.6},
+  {name:"Гутор Валерия",  restaurant:"12-1",    speed:19.0, problem:1.4, productivity:138, cx:9.2, clients:9.1},
+  {name:"Усова Алина",  restaurant:"12-1",   speed:20.1, problem:1.2, productivity:135, cx:9.0, clients:8.9},
+  {name:"Степанова Александра", restaurant:"12-1",      speed:21.3, problem:1.3, productivity:130, cx:8.8, clients:9.2},
+  {name:"Селюкова Екатерина",    restaurant:"12-1",   speed:22.0, problem:1.8, productivity:128, cx:8.6, clients:8.5},
+  {name:"Степанов Даниил",  restaurant:"12-1",   speed:21.8, problem:1.6, productivity:125, cx:8.7, clients:8.8},
+  {name:"Козлова Людмила",  restaurant:"12-1",   speed:23.5, problem:2.1, productivity:120, cx:8.4, clients:8.3},
+  {name:"Бахромкин Константин",  restaurant:"12-2",     speed:22.4, problem:1.9, productivity:118, cx:8.5, clients:8.6},
+  {name:"Финченко Артём",   restaurant:"12-2",   speed:24.0, problem:2.3, productivity:115, cx:8.2, clients:8.1},
+  {name:"Строк Ксения", restaurant:"12-2",  speed:23.1, problem:2.0, productivity:113, cx:8.3, clients:8.4},
+  {name:"Корепина Наталия",   restaurant:"12-2",     speed:24.8, problem:2.4, productivity:110, cx:8.0, clients:8.0},
+  {name:"Андрусов Олег",  restaurant:"12-2",     speed:25.0, problem:2.6, productivity:108, cx:7.9, clients:7.8},
+  {name:"Лыткина Татьяна",  restaurant:"12-3",   speed:25.5, problem:2.8, productivity:105, cx:7.7, clients:7.9},
+  {name:"Гришанова Диана",   restaurant:"12-3",   speed:26.1, problem:2.5, productivity:103, cx:7.8, clients:7.7},
+  {name:"Гаврилица Олег",    restaurant:"12-3",   speed:26.8, problem:3.0, productivity:100, cx:7.6, clients:7.5},
+  {name:"Дубчак Максим",  restaurant:"12-3",   speed:27.0, problem:3.1, productivity:98,  cx:7.5, clients:7.6},
+  {name:"Ядловский Кирилл",   restaurant:"12-5",     speed:27.5, problem:3.3, productivity:96,  cx:7.4, clients:7.3},
+  {name:"Кирюшова Наталия",   restaurant:"12-5",    speed:28.0, problem:3.5, productivity:94,  cx:7.3, clients:7.2},
+  {name:"Прокашев Дмитрий",    restaurant:"12-5",   speed:28.5, problem:3.7, productivity:92,  cx:7.1, clients:7.0},
+  {name:"Куприянов Константин", restaurant:"12-5",    speed:29.0, problem:3.8, productivity:90,  cx:7.0, clients:7.1},
+  {name:"Вебер Ксения",   restaurant:"12-5",    speed:29.5, problem:4.0, productivity:88,  cx:6.9, clients:6.8},
+  {name:"Леликова Мария", restaurant:"12-5",    speed:30.0, problem:4.2, productivity:86,  cx:6.8, clients:6.9},
+  {name:"Симонов Олег",  restaurant:"12-6",   speed:30.5, problem:4.5, productivity:84,  cx:6.7, clients:6.6},
+  {name:"Кузнецов Фёдор", restaurant:"12-6",    speed:31.0, problem:4.7, productivity:82,  cx:6.5, clients:6.5},
+  {name:"Корниенко Даниил", restaurant:"12-6",  speed:31.5, problem:5.0, productivity:80,  cx:6.4, clients:6.3},
+  {name:"Тошова Амина", restaurant:"12-6",    speed:32.0, problem:5.2, productivity:78,  cx:6.3, clients:6.2},
+  {name:"Небесная Анастасия", restaurant:"Металлострой",      speed:32.5, problem:5.5, productivity:76,  cx:6.2, clients:6.1},
+  {name:"Добрянская Анастасия", restaurant:"Металлострой",  speed:33.0, problem:5.8, productivity:74,  cx:6.0, clients:6.0},
+  {name:"Тарасов Алексей", restaurant:"Металлострой",     speed:33.5, problem:6.0, productivity:72,  cx:5.9, clients:5.8},
+  {name:"Сафронова Ольга", restaurant:"Металлострой",  speed:34.0, problem:6.3, productivity:70,  cx:5.8, clients:5.7},
+  {name:"Кузахметова Кристина",  restaurant:"Пушкин",       speed:34.5, problem:6.5, productivity:68,  cx:5.7, clients:5.6},
+  {name:"Парфёнова Дарья",   restaurant:"Пушкин",   speed:35.0, problem:6.8, productivity:66,  cx:5.5, clients:5.5},
+  {name:"Хомячук Александра",   restaurant:"Пушкин",   speed:35.5, problem:7.0, productivity:64,  cx:5.4, clients:5.3},
+  {name:"Максютов Данила",  restaurant:"Пушкин",  speed:36.0, problem:7.3, productivity:62,  cx:5.3, clients:5.2},
+  {name:"Бекенев Александр",   restaurant:"Пушкин", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Мустафина Эвелина",  restaurant:"Кумертау", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Макеева Мария", restaurant:"Кумертау",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Фролов Вадим", restaurant:"Кумертау",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Вельможин Владислав", restaurant:"Кумертау", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Буранбаева Екатерина", restaurant:"Мелеуз", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Абдрахимова Римма", restaurant:"Мелеуз",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Латыпова Эльвира", restaurant:"Мелеуз",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Гафиятуллина Юлия", restaurant:"Мелеуз", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Нигматуллина Элона", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Назаров Айгизар", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Раева Айгиза", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Афанасьева Ангелина", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Волкодав Лейля", restaurant:"Белебей",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Пальцева Кристина",   restaurant:"Белебей", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Галлямов Ильнур",  restaurant:"Белебей",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
 ];
 // =====================================================
 
@@ -460,7 +460,7 @@ function buildMain(){
       <div class="lb-pos ${pClass}">${i<3?posLabel(i+1):i+1}</div>
       <div class="lb-person">
         <div class="lb-avatar" style="background:${color(idx)}">${initials(m.name)}</div>
-        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.shift}</div></div>
+        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.restaurant}</div></div>
       </div>
       <div class="lb-val">${m.overall} <span>баллов</span></div>
       <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${pct}%"></div></div></div>
@@ -494,7 +494,7 @@ function buildMetricPage(pageId, metricKey){
       <span class="podium-medal">${medals[i]}</span>
       <div style="width:44px;height:44px;border-radius:50%;background:${color(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
       <div class="podium-name">${m.name}</div>
-      <div style="font-size:11px;color:#888;margin-bottom:4px">${m.shift}</div>
+      <div style="font-size:11px;color:#888;margin-bottom:4px">${m.restaurant}</div>
       <div class="podium-val">${cfg.fmt(m[metricKey])}</div>
       <div class="podium-rank-label">${cfg.unit}</div>
     </div>`;
@@ -514,7 +514,7 @@ function buildMetricPage(pageId, metricKey){
       <div class="lb-pos ${pClass}">${i<3?posLabel(i+1):i+1}</div>
       <div class="lb-person">
         <div class="lb-avatar" style="background:${color(idx)}">${initials(m.name)}</div>
-        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.shift}</div></div>
+        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.restaurant}</div></div>
       </div>
       <div class="lb-val">${cfg.fmt(m[metricKey])} <span>${cfg.unit}</span></div>
       <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${pct}%"></div></div></div>
