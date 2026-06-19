@@ -9,57 +9,39 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --orange:#FF6B00;
-    --orange-dark:#D95800;
-    --orange-light:#FFF0E6;
-    --orange-mid:#FF8C33;
-    --gold:#E8A800;
-    --gold-light:#FFF8E1;
-    --bg:#F5F5F5;
-    --bg-dark:#ECECEC;
-    --card:#FFFFFF;
-    --text:#1A1A1A;
-    --text2:#555555;
-    --text3:#888888;
-    --border:#E5E5E5;
-    --rank1:#FF6B00;
-    --rank2:#9E9E9E;
-    --rank3:#CD8B3A;
-    --green:#2E9E5B;
-    --green-light:#E8F5EE;
-    --red:#D93025;
-    --red-light:#FDECEB;
-    --blue:#1A73E8;
-    --blue-light:#E8F0FE;
+    --orange:#FF6B00;--orange-dark:#D95800;--orange-light:#FFF0E6;--orange-mid:#FF8C33;
+    --gold:#E8A800;--gold-light:#FFF8E1;
+    --bg:#F5F5F5;--bg-dark:#ECECEC;--card:#FFFFFF;
+    --text:#1A1A1A;--text2:#555555;--text3:#888888;--border:#E5E5E5;
+    --rank1:#FF6B00;--rank2:#9E9E9E;--rank3:#CD8B3A;
+    --green:#2E9E5B;--green-light:#E8F5EE;--red:#D93025;--red-light:#FDECEB;
+    --blue:#1A73E8;--blue-light:#E8F0FE;
   }
   body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 
-  /* HEADER */
   .header{background:var(--orange);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
   .header-logo{display:flex;align-items:center;gap:10px}
-  .header-logo svg{width:36px;height:36px}
+  .header-logo img{width:36px;height:36px;border-radius:8px}
   .header-logo span{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.5px}
   .header-sub{font-size:13px;color:rgba(255,255,255,0.75);font-weight:500}
   .week-badge{background:rgba(255,255,255,0.2);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.3)}
 
-  /* NAV */
-  .nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;gap:0;overflow-x:auto}
-  .nav-item{padding:14px 20px;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;text-decoration:none;display:block}
+  .nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav-item{padding:14px 18px;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;text-decoration:none;display:block}
   .nav-item:hover{color:var(--orange)}
   .nav-item.active{color:var(--orange);border-bottom-color:var(--orange);font-weight:600}
 
-  /* PAGES */
   .page{display:none;padding:24px;max-width:1200px;margin:0 auto}
   .page.active{display:block}
 
-  /* SECTION TITLE */
   .section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:14px}
 
-  /* KING CARD */
+  /* KING */
   .king-section{margin-bottom:28px}
   .king-card{background:linear-gradient(135deg,#1A1A1A 0%,#2D2D2D 100%);border-radius:20px;padding:28px 32px;display:flex;align-items:center;gap:28px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15)}
   .king-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,107,0,0.15) 0%,transparent 70%);pointer-events:none}
-  .king-crown{font-size:56px;line-height:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))}
+  .king-crown{font-size:56px;line-height:1}
   .king-info{flex:1}
   .king-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:6px}
   .king-name{font-size:32px;font-weight:900;color:#fff;letter-spacing:-0.5px;line-height:1.1;margin-bottom:4px}
@@ -68,43 +50,31 @@
   .king-score-val{font-size:48px;font-weight:900;color:var(--orange);line-height:1;letter-spacing:-2px}
   .king-score-label{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:500}
   .king-stats{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-  .king-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:7px 12px;font-size:12px;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:6px}
+  .king-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:7px 12px;font-size:12px;color:rgba(255,255,255,0.7)}
   .king-stat strong{color:#fff;font-weight:600}
 
   /* LEADERS GRID */
-  .leaders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:28px}
-  .leader-card{background:var(--card);border-radius:14px;padding:18px 16px;border:1.5px solid var(--border);cursor:pointer;transition:transform .15s,border-color .15s;position:relative;overflow:hidden}
+  .leaders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:28px}
+  .leader-card{background:var(--card);border-radius:14px;padding:18px 16px;border:1.5px solid var(--border);position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
   .leader-card:hover{transform:translateY(-2px);border-color:var(--orange)}
   .leader-card.rank-1{border-color:var(--rank1);background:linear-gradient(135deg,#fff 0%,var(--orange-light) 100%)}
-  .leader-card.rank-2{border-color:#C0C0C0}
-  .leader-card.rank-3{border-color:var(--rank3)}
-  .rank-badge{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
-  .rank-badge.r1{background:var(--rank1)}
-  .rank-badge.r2{background:var(--rank2)}
-  .rank-badge.r3{background:var(--rank3)}
-  .rank-badge.rN{background:#e0e0e0;color:#888;font-size:11px}
+  .rank-badge{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;background:var(--rank1)}
   .leader-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
   .leader-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;padding-right:30px;line-height:1.3}
   .leader-metric-label{font-size:11px;color:var(--text3);margin-bottom:3px;font-weight:500}
   .leader-metric-val{font-size:22px;font-weight:800;color:var(--orange)}
   .leader-unit{font-size:12px;color:var(--text3);margin-left:2px;font-weight:500}
-  .leader-change{font-size:11px;margin-top:6px;display:flex;align-items:center;gap:3px}
-  .change-up{color:var(--green)}
-  .change-dn{color:var(--red)}
-  .change-eq{color:var(--text3)}
 
-  /* FULL LEADERBOARD */
+  /* LEADERBOARD */
   .lb-wrap{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden;margin-bottom:28px}
-  .lb-header{display:grid;grid-template-columns:52px 1fr 110px 90px;gap:0;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text3)}
-  .lb-row{display:grid;grid-template-columns:52px 1fr 110px 90px;gap:0;padding:12px 16px;border-bottom:1px solid var(--bg-dark);align-items:center;transition:background .1s}
+  .lb-header{display:grid;grid-template-columns:52px 1fr 120px 90px;gap:0;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text3)}
+  .lb-row{display:grid;grid-template-columns:52px 1fr 120px 90px;gap:0;padding:12px 16px;border-bottom:1px solid var(--bg-dark);align-items:center;transition:background .1s}
   .lb-row:last-child{border-bottom:none}
   .lb-row:hover{background:var(--bg)}
   .lb-row.top3{background:var(--orange-light)}
   .lb-row.top3:hover{background:#FFE8D6}
-  .lb-pos{font-size:16px;font-weight:800;color:var(--text3);min-width:32px}
-  .lb-pos.p1{color:var(--rank1)}
-  .lb-pos.p2{color:var(--rank2)}
-  .lb-pos.p3{color:var(--rank3)}
+  .lb-pos{font-size:16px;font-weight:800;color:var(--text3)}
+  .lb-pos.p1{color:var(--rank1)}.lb-pos.p2{color:var(--rank2)}.lb-pos.p3{color:var(--rank3)}
   .lb-person{display:flex;align-items:center;gap:10px}
   .lb-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
   .lb-pname{font-size:14px;font-weight:600;color:var(--text)}
@@ -113,14 +83,26 @@
   .lb-val span{font-size:11px;color:var(--text3);font-weight:400}
   .lb-bar-wrap{padding-right:12px}
   .lb-bar{height:6px;background:var(--bg-dark);border-radius:3px;overflow:hidden}
-  .lb-bar-fill{height:100%;border-radius:3px;background:var(--orange);transition:width .5s}
+  .lb-bar-fill{height:100%;border-radius:3px;background:var(--orange)}
 
-  /* METRIC PAGE HEADER */
+  /* SPEED TABS */
+  .speed-tabs{display:flex;gap:8px;margin-bottom:20px}
+  .speed-tab{padding:9px 20px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--text2);transition:all .15s}
+  .speed-tab.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .speed-panel{display:none}
+  .speed-panel.active{display:block}
+
+  /* TARGET BADGE */
+  .target-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-left:10px}
+  .target-good{background:var(--green-light);color:var(--green)}
+  .target-bad{background:var(--red-light);color:var(--red)}
+
+  /* METRIC HEADER */
   .metric-header{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:22px 24px;margin-bottom:20px;display:flex;align-items:center;gap:20px}
   .metric-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
   .metric-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.3px}
   .metric-desc{font-size:13px;color:var(--text3);margin-top:3px}
-  .metric-week{margin-left:auto;text-align:right}
+  .metric-week{margin-left:auto;text-align:right;flex-shrink:0}
   .metric-week-label{font-size:11px;color:var(--text3);font-weight:500}
   .metric-week-val{font-size:24px;font-weight:800;color:var(--orange)}
 
@@ -131,21 +113,20 @@
   .stat-val{font-size:26px;font-weight:800;color:var(--text);line-height:1}
   .stat-unit{font-size:12px;color:var(--text3);font-weight:500;margin-top:4px}
 
-  /* TOP 3 BIG */
+  /* PODIUM */
   .podium{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
-  .podium-card{background:var(--card);border-radius:16px;border:1.5px solid var(--border);padding:20px 16px;text-align:center;position:relative}
-  .podium-card.p1{border-color:var(--orange);order:-1}
-  .podium-card.p2{border-color:#C0C0C0}
-  .podium-card.p3{border-color:var(--rank3)}
+  .podium-card{background:var(--card);border-radius:16px;border:1.5px solid var(--border);padding:20px 16px;text-align:center}
+  .podium-card.p1{border-color:var(--orange)}.podium-card.p2{border-color:#C0C0C0}.podium-card.p3{border-color:var(--rank3)}
   .podium-medal{font-size:32px;display:block;margin-bottom:8px}
   .podium-name{font-size:15px;font-weight:700;color:var(--text)}
   .podium-val{font-size:28px;font-weight:900;color:var(--orange);margin:6px 0 2px}
   .podium-rank-label{font-size:11px;color:var(--text3);font-weight:500}
 
-  /* SCROLL TOP */
-  .scroll-hint{text-align:center;padding:8px;color:var(--text3);font-size:12px}
+  /* VALUE COLORING */
+  .val-good{color:var(--green) !important}
+  .val-bad{color:var(--red) !important}
+  .val-ok{color:var(--orange) !important}
 
-  /* RESPONSIVE */
   @media(max-width:600px){
     .king-card{flex-direction:column;text-align:center}
     .king-score{text-align:center}
@@ -153,9 +134,11 @@
     .leaders-grid{grid-template-columns:1fr 1fr}
     .lb-header,.lb-row{grid-template-columns:40px 1fr 80px}
     .lb-bar-wrap{display:none}
-    .podium{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+    .podium{grid-template-columns:1fr 1fr}
     .podium-card.p1{grid-column:1/-1}
     .header-sub{display:none}
+    .metric-header{flex-wrap:wrap}
+    .metric-week{margin-left:0}
   }
 </style>
 </head>
@@ -163,82 +146,100 @@
 
 <header class="header">
   <div class="header-logo">
-    <img src="dodo-logo.png" class="logo-img" alt="Логотип" width="46" height="46">
+    <img src="dodo-logo.png" alt="Додо" onerror="this.style.display='none'">
     <span>Додо</span>
     <span class="header-sub">Дашборд смены</span>
   </div>
-  <div class="week-badge" id="weekBadge">Неделя 22/06-28/06 · 2026</div>
+  <div class="week-badge" id="weekBadge"></div>
 </header>
 
 <nav class="nav">
   <a class="nav-item active" data-page="main" href="#">🏆 Главная</a>
-  <a class="nav-item" data-page="speed" href="#">⚡ Скорость</a>
+  <a class="nav-item" data-page="speed_delivery" href="#">🛵 Скорость доставки</a>
+  <a class="nav-item" data-page="speed_hall" href="#">🍽️ Скорость в зал</a>
   <a class="nav-item" data-page="problem" href="#">😡 Коэф. проблемности</a>
   <a class="nav-item" data-page="productivity" href="#">🍕 Производительность</a>
-  <a class="nav-item" data-page="cx" href="#">👥 Рейтинг Клиентского Опыта</a>
+  <a class="nav-item" data-page="cx" href="#">👥 Рейтинг КО</a>
   <a class="nav-item" data-page="clients" href="#">⭐ Рейтинг клиентов</a>
 </nav>
 
 <!-- ===================== MAIN PAGE ===================== -->
 <div class="page active" id="page-main">
-
   <div class="king-section">
-    <div class="section-title">Король смены — неделя 22/06-28/06</div>
+    <div class="section-title" id="kingWeekTitle">Король смены</div>
     <div class="king-card">
       <div class="king-crown">👑</div>
       <div class="king-info">
         <div class="king-label">Король смены</div>
-        <div class="king-name" id="kingName">Эрен Йегер</div>
-        <div class="king-meta" id="kingMeta">· 5 недель в топе</div>
-        <div class="king-stats" id="kingStats">
-          <div class="king-stat">⚡ Скорость <strong>#1</strong></div>
-          <div class="king-stat">🍕 Производительность <strong>#2</strong></div>
-          <div class="king-stat">👥 РКО <strong>#1</strong></div>
-        </div>
+        <div class="king-name" id="kingName"></div>
+        <div class="king-meta" id="kingMeta"></div>
+        <div class="king-stats" id="kingStats"></div>
       </div>
       <div class="king-score">
-        <div class="king-score-val" id="kingScore">94</div>
+        <div class="king-score-val" id="kingScore"></div>
         <div class="king-score-label">ОБЩИЙ БАЛЛ</div>
       </div>
     </div>
   </div>
-
   <div class="section-title">Лидеры недели по показателям</div>
   <div class="leaders-grid" id="leadersGrid"></div>
-
   <div class="section-title">Полная таблица — общий рейтинг</div>
   <div class="lb-wrap">
-    <div class="lb-header">
-      <div>#</div><div>Менеджер</div><div style="text-align:right">Балл</div><div></div>
-    </div>
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Балл</div><div></div></div>
     <div id="mainTable"></div>
   </div>
 </div>
 
-<!-- ===================== SPEED PAGE ===================== -->
-<div class="page" id="page-speed">
+<!-- ===================== SPEED DELIVERY PAGE ===================== -->
+<div class="page" id="page-speed_delivery">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#FFF0E6">⚡</div>
+    <div class="metric-icon" style="background:#FFF0E6">🛵</div>
     <div>
-      <div class="metric-title">Скорость</div>
-      <div class="metric-desc">Среднее время приготовления заказа за смену · Меньше = лучше</div>
+      <div class="metric-title">Скорость доставки</div>
+      <div class="metric-desc">Среднее время доставки заказа · Меньше = лучше · Цель: до 14 минут</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
-      <div class="metric-week-val" id="speedBest">—</div>
+      <div class="metric-week-val" id="speed_deliveryBest">—</div>
     </div>
   </div>
-  <div class="stats-row" id="speedStats"></div>
+  <div class="stats-row" id="speed_deliveryStats"></div>
   <div class="section-title">Топ-3 недели</div>
-  <div class="podium" id="speedPodium"></div>
+  <div class="podium" id="speed_deliveryPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="speedTable"></div></div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="speed_deliveryTable"></div>
+  </div>
+</div>
+
+<!-- ===================== SPEED HALL PAGE ===================== -->
+<div class="page" id="page-speed_hall">
+  <div class="metric-header">
+    <div class="metric-icon" style="background:#FFF8E1">🍽️</div>
+    <div>
+      <div class="metric-title">Скорость в зал</div>
+      <div class="metric-desc">Среднее время подачи заказа в зал · Меньше = лучше · Цель: до 10 минут</div>
+    </div>
+    <div class="metric-week">
+      <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
+      <div class="metric-week-val" id="speed_hallBest">—</div>
+    </div>
+  </div>
+  <div class="stats-row" id="speed_hallStats"></div>
+  <div class="section-title">Топ-3 недели</div>
+  <div class="podium" id="speed_hallPodium"></div>
+  <div class="section-title">Все места</div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="speed_hallTable"></div>
+  </div>
 </div>
 
 <!-- ===================== PROBLEM PAGE ===================== -->
 <div class="page" id="page-problem">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#E8F5EE">😡</div>
+    <div class="metric-icon" style="background:#FDECEB">😡</div>
     <div>
       <div class="metric-title">Коэффициент проблемности</div>
       <div class="metric-desc">Доля проблемных заказов за смену · Меньше = лучше</div>
@@ -252,7 +253,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="problemPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="problemTable"></div></div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="problemTable"></div>
+  </div>
 </div>
 
 <!-- ===================== PRODUCTIVITY PAGE ===================== -->
@@ -261,7 +265,7 @@
     <div class="metric-icon" style="background:#E8F0FE">🍕</div>
     <div>
       <div class="metric-title">Производительность на смене</div>
-      <div class="metric-desc">Продукт на человека в час · Больше = лучше</div>
+      <div class="metric-desc">Продуктов на человека в час · Больше = лучше · Хороший результат: от 8.0</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -272,16 +276,19 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="productivityPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="productivityTable"></div></div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="productivityTable"></div>
+  </div>
 </div>
 
 <!-- ===================== CX PAGE ===================== -->
 <div class="page" id="page-cx">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#FFF8E1">👥</div>
+    <div class="metric-icon" style="background:#E8F5EE">👥</div>
     <div>
       <div class="metric-title">Рейтинг клиентского опыта</div>
-      <div class="metric-desc">NPS / РКО за период · Больше = лучше</div>
+      <div class="metric-desc">РКО за период · Больше = лучше · Хороший результат: от 95 баллов</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -292,7 +299,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="cxPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="cxTable"></div></div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="cxTable"></div>
+  </div>
 </div>
 
 <!-- ===================== CLIENTS PAGE ===================== -->
@@ -301,7 +311,7 @@
     <div class="metric-icon" style="background:#F0F0FF">⭐</div>
     <div>
       <div class="metric-title">Рейтинг клиентов</div>
-      <div class="metric-desc">Оценка от клиентов за смену · Больше = лучше</div>
+      <div class="metric-desc">Оценка клиентов за смену · Больше = лучше · Максимум: 5.0</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -312,221 +322,268 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="clientsPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="clientsTable"></div></div>
+  <div class="lb-wrap">
+    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
+    <div id="clientsTable"></div>
+  </div>
 </div>
 
 <script>
 // ============================================================
-// DATA — EDIT THIS SECTION EACH WEEK
+// ЧТО МЕНЯТЬ КАЖДУЮ НЕДЕЛЮ:
+//   1. WEEK_LABEL — период недели
+//   2. KING — имя, мета-строка, балл, жетоны достижений
+//   3. MANAGERS — данные каждого менеджера
+//
+// БАЛЛЫ СЧИТАЮТСЯ АВТОМАТИЧЕСКИ на основе мест в каждом показателе.
+// Каждый показатель даёт от 0 до 100 очков (1 место = 100, последнее = 0).
+// Итоговый балл = среднее по всем 6 метрикам.
 // ============================================================
-const WEEK_LABEL = "Неделя 22/06-28/06 · 2026";
 
-// King of the restaurant
+const WEEK_LABEL = "Неделя 22/06–28/06 · 2026";
+
+// Король смены — ЗАПОЛНЯТЬ ВРУЧНУЮ каждую неделю
 const KING = {
-  name: "Эрен Йегер",
-  meta: "· 3 недели в топе",
-  score: 94,
-  stats: ["⚡ Скорость #1", "🍕 Производительность #2", "⭐ РК #1"]
+  name:  "Эрен Йегер",
+  meta:  "· 3 недели в топе",
+  score: 94,   // можно поставить вычисленный балл из таблицы
+  stats: ["🛵 Доставка #1", "🍕 Производительность #2", "👥 РКО #1"]
 };
 
-// Avatar colors for managers
-const COLORS = ["#FF6B00","#1A73E8","#2E9E5B","#9B59B6","#E67E22","#16A085","#E74C3C","#2980B9","#8E44AD","#27AE60","#F39C12","#C0392B","#1ABC9C","#D35400","#3498DB","#E91E63","#00BCD4","#FF5722","#607D8B","#795548"];
-
-function initials(name){const p=name.trim().split(' ');return p.length>=2?p[0][0]+p[1][0]:p[0].slice(0,2).toUpperCase()}
-function color(i){return COLORS[i%COLORS.length]}
-
-// Metric configs: {id, lowerIsBetter, unit, displayFn}
-const METRICS = {
-  speed:       {label:"Скорость",       emoji:"⚡", unit:"мин",  lowerBetter:true,  fmt:v=>v.toFixed(1)},
-  problem:     {label:"Проблемности",   emoji:"🔧", unit:"%",    lowerBetter:true,  fmt:v=>v.toFixed(1)+"%"},
-  productivity:{label:"Производительность",emoji:"🍕",unit:"продуктов на ч/ч",lowerBetter:false,fmt:v=>v},
-  cx:          {label:"РКО",     emoji:"👥", unit:"баллов",lowerBetter:false, fmt:v=>v.toFixed(1)},
-  clients:     {label:"Рейтинг клиентов",emoji:"⭐",unit:"из 5",lowerBetter:false,fmt:v=>v.toFixed(1)},
-};
-
-// ============ PASTE YOUR WEEKLY DATA HERE ============
-// Each manager appears once. Values per metric.
+// ============================================================
+// ДАННЫЕ МЕНЕДЖЕРОВ — МЕНЯЙ СЮДА КАЖДУЮ НЕДЕЛЮ
+//
+// speed_delivery  — скорость доставки, мин       (цель ≤ 14)
+// speed_hall      — скорость в зал, мин          (цель ≤ 10)
+// problem         — коэф. проблемности, %        (меньше лучше)
+// productivity    — продуктов на ч/ч             (7.3–9.0, больше лучше)
+// cx              — рейтинг клиент. опыта, баллы (до 100, хорошо ≥ 95)
+// clients         — рейтинг клиентов             (до 5.0, больше лучше)
+// ============================================================
 const MANAGERS = [
-  {name:"Брызгалов Артём", restaurant:"12-1",   speed:18.2, problem:1.1, productivity:142, cx:9.4, clients:9.6},
-  {name:"Гутор Валерия",  restaurant:"12-1",    speed:19.0, problem:1.4, productivity:138, cx:9.2, clients:9.1},
-  {name:"Усова Алина",  restaurant:"12-1",   speed:20.1, problem:1.2, productivity:135, cx:9.0, clients:8.9},
-  {name:"Степанова Александра", restaurant:"12-1",      speed:21.3, problem:1.3, productivity:130, cx:8.8, clients:9.2},
-  {name:"Селюкова Екатерина",    restaurant:"12-1",   speed:22.0, problem:1.8, productivity:128, cx:8.6, clients:8.5},
-  {name:"Степанов Даниил",  restaurant:"12-1",   speed:21.8, problem:1.6, productivity:125, cx:8.7, clients:8.8},
-  {name:"Козлова Людмила",  restaurant:"12-1",   speed:23.5, problem:2.1, productivity:120, cx:8.4, clients:8.3},
-  {name:"Бахромкин Константин",  restaurant:"12-2",     speed:22.4, problem:1.9, productivity:118, cx:8.5, clients:8.6},
-  {name:"Финченко Артём",   restaurant:"12-2",   speed:24.0, problem:2.3, productivity:115, cx:8.2, clients:8.1},
-  {name:"Строк Ксения", restaurant:"12-2",  speed:23.1, problem:2.0, productivity:113, cx:8.3, clients:8.4},
-  {name:"Корепина Наталия",   restaurant:"12-2",     speed:24.8, problem:2.4, productivity:110, cx:8.0, clients:8.0},
-  {name:"Андрусов Олег",  restaurant:"12-2",     speed:25.0, problem:2.6, productivity:108, cx:7.9, clients:7.8},
-  {name:"Лыткина Татьяна",  restaurant:"12-3",   speed:25.5, problem:2.8, productivity:105, cx:7.7, clients:7.9},
-  {name:"Гришанова Диана",   restaurant:"12-3",   speed:26.1, problem:2.5, productivity:103, cx:7.8, clients:7.7},
-  {name:"Гаврилица Олег",    restaurant:"12-3",   speed:26.8, problem:3.0, productivity:100, cx:7.6, clients:7.5},
-  {name:"Дубчак Максим",  restaurant:"12-3",   speed:27.0, problem:3.1, productivity:98,  cx:7.5, clients:7.6},
-  {name:"Ядловский Кирилл",   restaurant:"12-5",     speed:27.5, problem:3.3, productivity:96,  cx:7.4, clients:7.3},
-  {name:"Кирюшова Наталия",   restaurant:"12-5",    speed:28.0, problem:3.5, productivity:94,  cx:7.3, clients:7.2},
-  {name:"Прокашев Дмитрий",    restaurant:"12-5",   speed:28.5, problem:3.7, productivity:92,  cx:7.1, clients:7.0},
-  {name:"Куприянов Константин", restaurant:"12-5",    speed:29.0, problem:3.8, productivity:90,  cx:7.0, clients:7.1},
-  {name:"Вебер Ксения",   restaurant:"12-5",    speed:29.5, problem:4.0, productivity:88,  cx:6.9, clients:6.8},
-  {name:"Леликова Мария", restaurant:"12-5",    speed:30.0, problem:4.2, productivity:86,  cx:6.8, clients:6.9},
-  {name:"Симонов Олег",  restaurant:"12-6",   speed:30.5, problem:4.5, productivity:84,  cx:6.7, clients:6.6},
-  {name:"Кузнецов Фёдор", restaurant:"12-6",    speed:31.0, problem:4.7, productivity:82,  cx:6.5, clients:6.5},
-  {name:"Корниенко Даниил", restaurant:"12-6",  speed:31.5, problem:5.0, productivity:80,  cx:6.4, clients:6.3},
-  {name:"Тошова Амина", restaurant:"12-6",    speed:32.0, problem:5.2, productivity:78,  cx:6.3, clients:6.2},
-  {name:"Небесная Анастасия", restaurant:"Металлострой",      speed:32.5, problem:5.5, productivity:76,  cx:6.2, clients:6.1},
-  {name:"Добрянская Анастасия", restaurant:"Металлострой",  speed:33.0, problem:5.8, productivity:74,  cx:6.0, clients:6.0},
-  {name:"Тарасов Алексей", restaurant:"Металлострой",     speed:33.5, problem:6.0, productivity:72,  cx:5.9, clients:5.8},
-  {name:"Сафронова Ольга", restaurant:"Металлострой",  speed:34.0, problem:6.3, productivity:70,  cx:5.8, clients:5.7},
-  {name:"Кузахметова Кристина",  restaurant:"Пушкин",       speed:34.5, problem:6.5, productivity:68,  cx:5.7, clients:5.6},
-  {name:"Парфёнова Дарья",   restaurant:"Пушкин",   speed:35.0, problem:6.8, productivity:66,  cx:5.5, clients:5.5},
-  {name:"Хомячук Александра",   restaurant:"Пушкин",   speed:35.5, problem:7.0, productivity:64,  cx:5.4, clients:5.3},
-  {name:"Максютов Данила",  restaurant:"Пушкин",  speed:36.0, problem:7.3, productivity:62,  cx:5.3, clients:5.2},
-  {name:"Бекенев Александр",   restaurant:"Пушкин", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Мустафина Эвелина",  restaurant:"Кумертау", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Макеева Мария", restaurant:"Кумертау",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Фролов Вадим", restaurant:"Кумертау",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Вельможин Владислав", restaurant:"Кумертау", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Буранбаева Екатерина", restaurant:"Мелеуз", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Абдрахимова Римма", restaurant:"Мелеуз",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Латыпова Эльвира", restaurant:"Мелеуз",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Гафиятуллина Юлия", restaurant:"Мелеуз", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Нигматуллина Элона", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Назаров Айгизар", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Раева Айгиза", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Афанасьева Ангелина", restaurant:"Сибай", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Волкодав Лейля", restaurant:"Белебей",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Пальцева Кристина",   restaurant:"Белебей", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Галлямов Ильнур",  restaurant:"Белебей",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Брызгалов Артём",        r:"12-1",         speed_delivery:12.1, speed_hall:8.4,  problem:1.1, productivity:8.9, cx:97.2, clients:4.9},
+  {name:"Гутор Валерия",          r:"12-1",         speed_delivery:12.8, speed_hall:8.9,  problem:1.4, productivity:8.7, cx:96.5, clients:4.8},
+  {name:"Усова Алина",            r:"12-1",         speed_delivery:13.0, speed_hall:9.1,  problem:1.2, productivity:8.6, cx:96.1, clients:4.8},
+  {name:"Степанова Александра",   r:"12-1",         speed_delivery:13.4, speed_hall:9.3,  problem:1.3, productivity:8.5, cx:95.8, clients:4.7},
+  {name:"Селюкова Екатерина",     r:"12-1",         speed_delivery:13.7, speed_hall:9.5,  problem:1.8, productivity:8.4, cx:95.4, clients:4.7},
+  {name:"Степанов Даниил",        r:"12-1",         speed_delivery:13.9, speed_hall:9.7,  problem:1.6, productivity:8.3, cx:95.0, clients:4.6},
+  {name:"Козлова Людмила",        r:"12-1",         speed_delivery:14.2, speed_hall:9.9,  problem:2.1, productivity:8.2, cx:94.6, clients:4.6},
+  {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:14.5, speed_hall:10.1, problem:1.9, productivity:8.1, cx:94.2, clients:4.5},
+  {name:"Финченко Артём",         r:"12-2",         speed_delivery:14.8, speed_hall:10.3, problem:2.3, productivity:8.0, cx:93.9, clients:4.5},
+  {name:"Строк Ксения",           r:"12-2",         speed_delivery:15.0, speed_hall:10.4, problem:2.0, productivity:7.9, cx:93.5, clients:4.4},
+  {name:"Корепина Наталия",       r:"12-2",         speed_delivery:15.3, speed_hall:10.6, problem:2.4, productivity:7.8, cx:93.1, clients:4.4},
+  {name:"Андрусов Олег",          r:"12-2",         speed_delivery:15.6, speed_hall:10.8, problem:2.6, productivity:7.7, cx:92.7, clients:4.3},
+  {name:"Лыткина Татьяна",        r:"12-3",         speed_delivery:15.9, speed_hall:11.0, problem:2.8, productivity:7.6, cx:92.3, clients:4.3},
+  {name:"Гришанова Диана",        r:"12-3",         speed_delivery:16.1, speed_hall:11.2, problem:2.5, productivity:7.6, cx:91.9, clients:4.2},
+  {name:"Гаврилица Олег",         r:"12-3",         speed_delivery:16.4, speed_hall:11.4, problem:3.0, productivity:7.5, cx:91.5, clients:4.2},
+  {name:"Дубчак Максим",          r:"12-3",         speed_delivery:16.7, speed_hall:11.6, problem:3.1, productivity:7.5, cx:91.1, clients:4.1},
+  {name:"Ядловский Кирилл",       r:"12-5",         speed_delivery:17.0, speed_hall:11.8, problem:3.3, productivity:7.4, cx:90.7, clients:4.1},
+  {name:"Кирюшова Наталия",       r:"12-5",         speed_delivery:17.3, speed_hall:12.0, problem:3.5, productivity:7.4, cx:90.3, clients:4.0},
+  {name:"Прокашев Дмитрий",       r:"12-5",         speed_delivery:17.6, speed_hall:12.2, problem:3.7, productivity:7.3, cx:89.8, clients:4.0},
+  {name:"Куприянов Константин",   r:"12-5",         speed_delivery:17.9, speed_hall:12.4, problem:3.8, productivity:7.3, cx:89.4, clients:3.9},
+  {name:"Вебер Ксения",           r:"12-5",         speed_delivery:18.2, speed_hall:12.6, problem:4.0, productivity:7.8, cx:88.9, clients:3.9},
+  {name:"Леликова Мария",         r:"12-5",         speed_delivery:18.5, speed_hall:12.8, problem:4.2, productivity:7.7, cx:88.5, clients:3.8},
+  {name:"Симонов Олег",           r:"12-6",         speed_delivery:18.8, speed_hall:13.0, problem:4.5, productivity:7.6, cx:88.0, clients:3.8},
+  {name:"Кузнецов Фёдор",         r:"12-6",         speed_delivery:19.1, speed_hall:13.2, problem:4.7, productivity:7.6, cx:87.6, clients:3.7},
+  {name:"Корниенко Даниил",       r:"12-6",         speed_delivery:19.4, speed_hall:13.4, problem:5.0, productivity:7.5, cx:87.1, clients:3.7},
+  {name:"Тошова Амина",           r:"12-6",         speed_delivery:19.7, speed_hall:13.6, problem:5.2, productivity:7.5, cx:86.6, clients:3.6},
+  {name:"Небесная Анастасия",     r:"Металлострой", speed_delivery:20.0, speed_hall:13.8, problem:5.5, productivity:7.4, cx:86.1, clients:3.6},
+  {name:"Добрянская Анастасия",   r:"Металлострой", speed_delivery:20.3, speed_hall:14.0, problem:5.8, productivity:7.4, cx:85.6, clients:3.5},
+  {name:"Тарасов Алексей",        r:"Металлострой", speed_delivery:20.6, speed_hall:14.3, problem:6.0, productivity:7.3, cx:85.1, clients:3.5},
+  {name:"Сафронова Ольга",        r:"Металлострой", speed_delivery:20.9, speed_hall:14.6, problem:6.3, productivity:7.3, cx:84.5, clients:3.4},
+  {name:"Кузахметова Кристина",   r:"Пушкин",       speed_delivery:21.2, speed_hall:14.9, problem:6.5, productivity:7.8, cx:84.0, clients:3.4},
+  {name:"Парфёнова Дарья",        r:"Пушкин",       speed_delivery:21.5, speed_hall:15.2, problem:6.8, productivity:7.7, cx:83.5, clients:3.3},
+  {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:21.8, speed_hall:15.5, problem:7.0, productivity:7.6, cx:82.9, clients:3.3},
+  {name:"Максютов Данила",        r:"Пушкин",       speed_delivery:22.1, speed_hall:15.8, problem:7.3, productivity:7.5, cx:82.4, clients:3.2},
+  {name:"Бекенев Александр",      r:"Пушкин",       speed_delivery:22.4, speed_hall:16.1, problem:7.5, productivity:7.4, cx:81.8, clients:3.2},
+  {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:22.7, speed_hall:16.4, problem:7.7, productivity:7.7, cx:81.2, clients:3.1},
+  {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:23.0, speed_hall:16.7, problem:7.9, productivity:7.6, cx:80.6, clients:3.1},
+  {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:23.3, speed_hall:17.0, problem:8.1, productivity:7.5, cx:80.0, clients:3.0},
+  {name:"Вельможин Владислав",    r:"Кумертау",     speed_delivery:23.6, speed_hall:17.3, problem:8.3, productivity:7.4, cx:79.4, clients:3.0},
+  {name:"Буранбаева Екатерина",   r:"Мелеуз",       speed_delivery:23.9, speed_hall:17.6, problem:8.5, productivity:7.8, cx:78.8, clients:2.9},
+  {name:"Абдрахимова Римма",      r:"Мелеуз",       speed_delivery:24.2, speed_hall:17.9, problem:8.7, productivity:7.7, cx:78.1, clients:2.9},
+  {name:"Латыпова Эльвира",       r:"Мелеуз",       speed_delivery:24.5, speed_hall:18.2, problem:8.9, productivity:7.6, cx:77.5, clients:2.8},
+  {name:"Гафиятуллина Юлия",      r:"Мелеуз",       speed_delivery:24.8, speed_hall:18.5, problem:9.1, productivity:7.5, cx:76.8, clients:2.8},
+  {name:"Нигматуллина Элона",     r:"Сибай",        speed_delivery:25.1, speed_hall:18.8, problem:9.3, productivity:7.4, cx:76.1, clients:2.7},
+  {name:"Назаров Айгизар",        r:"Сибай",        speed_delivery:25.4, speed_hall:19.1, problem:9.5, productivity:7.3, cx:75.4, clients:2.7},
+  {name:"Раева Айгиза",           r:"Сибай",        speed_delivery:25.7, speed_hall:19.4, problem:9.7, productivity:7.8, cx:74.7, clients:2.6},
+  {name:"Афанасьева Ангелина",    r:"Сибай",        speed_delivery:26.0, speed_hall:19.7, problem:9.9, productivity:7.7, cx:74.0, clients:2.6},
+  {name:"Волкодав Лейля",         r:"Белебей",      speed_delivery:26.3, speed_hall:20.0, problem:10.1,productivity:7.6, cx:73.3, clients:2.5},
+  {name:"Пальцева Кристина",      r:"Белебей",      speed_delivery:26.6, speed_hall:20.3, problem:10.3,productivity:7.5, cx:72.6, clients:2.5},
+  {name:"Галлямов Ильнур",        r:"Белебей",      speed_delivery:26.9, speed_hall:20.6, problem:10.5,productivity:7.3, cx:71.9, clients:2.4},
 ];
-// =====================================================
 
-function rankManagers(metricKey, lowerBetter) {
-  const sorted = [...MANAGERS].sort((a,b)=> lowerBetter ? a[metricKey]-b[metricKey] : b[metricKey]-a[metricKey]);
-  return sorted.map((m,i)=>({...m, rank:i+1}));
+// ============================================================
+// КОНФИГУРАЦИЯ МЕТРИК
+// ============================================================
+const METRICS = {
+  speed_delivery: {
+    label:"Скорость доставки", emoji:"🛵", unit:"мин",
+    lowerBetter:true, target:14, targetDir:"lte",
+    fmt:v=>v.toFixed(1),
+    valClass:v=> v<=14 ? "val-good" : v<=16 ? "val-ok" : "val-bad"
+  },
+  speed_hall: {
+    label:"Скорость в зал", emoji:"🍽️", unit:"мин",
+    lowerBetter:true, target:10, targetDir:"lte",
+    fmt:v=>v.toFixed(1),
+    valClass:v=> v<=10 ? "val-good" : v<=12 ? "val-ok" : "val-bad"
+  },
+  problem: {
+    label:"Проблемности", emoji:"😡", unit:"%",
+    lowerBetter:true, target:null,
+    fmt:v=>v.toFixed(1)+"%",
+    valClass:v=> v<=2 ? "val-good" : v<=5 ? "val-ok" : "val-bad"
+  },
+  productivity: {
+    label:"Производительность", emoji:"🍕", unit:"прод/ч·ч",
+    lowerBetter:false, target:8.0, targetDir:"gte",
+    fmt:v=>v.toFixed(1),
+    valClass:v=> v>=8.0 ? "val-good" : v>=7.5 ? "val-ok" : "val-bad"
+  },
+  cx: {
+    label:"РКО", emoji:"👥", unit:"баллов",
+    lowerBetter:false, target:95, targetDir:"gte",
+    fmt:v=>v.toFixed(1),
+    valClass:v=> v>=95 ? "val-good" : v>=90 ? "val-ok" : "val-bad"
+  },
+  clients: {
+    label:"Рейтинг клиентов", emoji:"⭐", unit:"из 5",
+    lowerBetter:false, target:4.5, targetDir:"gte",
+    fmt:v=>v.toFixed(1),
+    valClass:v=> v>=4.5 ? "val-good" : v>=4.0 ? "val-ok" : "val-bad"
+  },
+};
+
+// ============================================================
+// ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+// ============================================================
+const COLORS=["#FF6B00","#1A73E8","#2E9E5B","#9B59B6","#E67E22","#16A085","#E74C3C","#2980B9","#8E44AD","#27AE60","#F39C12","#C0392B","#1ABC9C","#D35400","#3498DB","#E91E63","#00BCD4","#FF5722","#607D8B","#795548"];
+function initials(n){const p=n.trim().split(' ');return p.length>=2?p[0][0]+p[1][0]:p[0].slice(0,2).toUpperCase()}
+function clr(i){return COLORS[i%COLORS.length]}
+function posLabel(n){return n===1?'🥇':n===2?'🥈':n===3?'🥉':String(n)}
+
+function rankBy(key,lowerBetter){
+  return [...MANAGERS].sort((a,b)=>lowerBetter?a[key]-b[key]:b[key]-a[key]).map((m,i)=>({...m,rank:i+1}));
 }
 
-function computeOverallScore(m) {
-  let score = 0;
-  Object.keys(METRICS).forEach(key=>{
-    const ranked = rankManagers(key, METRICS[key].lowerBetter);
-    const pos = ranked.findIndex(r=>r.name===m.name)+1;
-    const n = MANAGERS.length;
-    score += Math.round((n-pos)/(n-1)*100);
+function overallScore(m){
+  let s=0,keys=Object.keys(METRICS);
+  keys.forEach(k=>{
+    const r=rankBy(k,METRICS[k].lowerBetter);
+    const pos=r.findIndex(x=>x.name===m.name)+1;
+    const n=MANAGERS.length;
+    s+=Math.round((n-pos)/(n-1)*100);
   });
-  return Math.round(score/Object.keys(METRICS).length);
+  return Math.round(s/keys.length);
 }
 
-function posLabel(n){if(n===1)return'🥇';if(n===2)return'🥈';if(n===3)return'🥉';return n+''}
-
-// ---- Build main page ----
+// ============================================================
+// ГЛАВНАЯ СТРАНИЦА
+// ============================================================
 function buildMain(){
-  document.getElementById('weekBadge').textContent = WEEK_LABEL;
-  document.getElementById('kingName').textContent = KING.name;
-  document.getElementById('kingMeta').textContent = KING.meta;
-  document.getElementById('kingScore').textContent = KING.score;
-  document.getElementById('kingStats').innerHTML = KING.stats.map(s=>`<div class="king-stat">${s}</div>`).join('');
+  document.getElementById('weekBadge').textContent=WEEK_LABEL;
+  document.getElementById('kingWeekTitle').textContent='Король смены — '+WEEK_LABEL;
+  document.getElementById('kingName').textContent=KING.name;
+  document.getElementById('kingMeta').textContent=KING.meta;
+  document.getElementById('kingScore').textContent=KING.score;
+  document.getElementById('kingStats').innerHTML=KING.stats.map(s=>`<div class="king-stat">${s}</div>`).join('');
 
-  // Leaders per metric (top 1 of each)
-  const grid = document.getElementById('leadersGrid');
-  grid.innerHTML = '';
-  Object.keys(METRICS).forEach((key,ki)=>{
-    const cfg = METRICS[key];
-    const ranked = rankManagers(key, cfg.lowerBetter);
-    const top = ranked[0];
-    const idx = MANAGERS.findIndex(m=>m.name===top.name);
-    const card = document.createElement('div');
-    card.className = 'leader-card rank-1';
-    card.innerHTML = `
-      <div class="rank-badge r1">1</div>
-      <div class="leader-avatar" style="background:${color(idx)}">${initials(top.name)}</div>
+  // Лидеры по каждому показателю
+  const grid=document.getElementById('leadersGrid');
+  grid.innerHTML='';
+  Object.keys(METRICS).forEach(key=>{
+    const cfg=METRICS[key];
+    const ranked=rankBy(key,cfg.lowerBetter);
+    const top=ranked[0];
+    const idx=MANAGERS.findIndex(m=>m.name===top.name);
+    const card=document.createElement('div');
+    card.className='leader-card rank-1';
+    card.innerHTML=`
+      <div class="rank-badge">1</div>
+      <div class="leader-avatar" style="background:${clr(idx)}">${initials(top.name)}</div>
       <div class="leader-name">${top.name}</div>
-      <div class="leader-metric-label">${cfg.label}</div>
-      <div class="leader-metric-val">${cfg.fmt(top[key])}<span class="leader-unit">${cfg.unit}</span></div>
+      <div class="leader-metric-label">${cfg.emoji} ${cfg.label}</div>
+      <div class="leader-metric-val ${cfg.valClass(top[key])}">${cfg.fmt(top[key])}<span class="leader-unit">${cfg.unit}</span></div>
     `;
     grid.appendChild(card);
   });
 
-  // Overall table
-  const withScore = MANAGERS.map(m=>({...m, overall:computeOverallScore(m)}));
-  withScore.sort((a,b)=>b.overall-a.overall);
-  const tb = document.getElementById('mainTable');
-  const maxScore = withScore[0].overall;
-  tb.innerHTML = withScore.map((m,i)=>{
-    const idx = MANAGERS.findIndex(x=>x.name===m.name);
-    const isTop = i<3;
-    const pClass = i===0?'p1':i===1?'p2':i===2?'p3':'';
-    const pct = Math.round(m.overall/maxScore*100);
-    return `<div class="lb-row${isTop?' top3':''}">
-      <div class="lb-pos ${pClass}">${i<3?posLabel(i+1):i+1}</div>
+  // Итоговая таблица
+  const scored=MANAGERS.map(m=>({...m,overall:overallScore(m)})).sort((a,b)=>b.overall-a.overall);
+  const maxS=scored[0].overall;
+  document.getElementById('mainTable').innerHTML=scored.map((m,i)=>{
+    const idx=MANAGERS.findIndex(x=>x.name===m.name);
+    return `<div class="lb-row${i<3?' top3':''}">
+      <div class="lb-pos ${i===0?'p1':i===1?'p2':i===2?'p3':''}">${posLabel(i+1)}</div>
       <div class="lb-person">
-        <div class="lb-avatar" style="background:${color(idx)}">${initials(m.name)}</div>
-        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.restaurant}</div></div>
+        <div class="lb-avatar" style="background:${clr(idx)}">${initials(m.name)}</div>
+        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.r}</div></div>
       </div>
       <div class="lb-val">${m.overall} <span>баллов</span></div>
-      <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${pct}%"></div></div></div>
+      <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${Math.round(m.overall/maxS*100)}%"></div></div></div>
     </div>`;
   }).join('');
 }
 
-function buildMetricPage(pageId, metricKey){
-  const cfg = METRICS[metricKey];
-  const ranked = rankManagers(metricKey, cfg.lowerBetter);
-  const maxVal = cfg.lowerBetter ? ranked[0][metricKey] : ranked[0][metricKey];
-  const minVal = ranked[ranked.length-1][metricKey];
-  const avg = ranked.reduce((s,m)=>s+m[metricKey],0)/ranked.length;
+// ============================================================
+// СТРАНИЦА МЕТРИКИ
+// ============================================================
+function buildMetricPage(key){
+  const cfg=METRICS[key];
+  const ranked=rankBy(key,cfg.lowerBetter);
+  const vals=ranked.map(m=>m[key]);
+  const avg=vals.reduce((s,v)=>s+v,0)/vals.length;
 
-  document.getElementById(metricKey+'Best').textContent = cfg.fmt(ranked[0][metricKey]);
+  document.getElementById(key+'Best').textContent=cfg.fmt(ranked[0][key]);
 
-  // Stats row
-  const statsEl = document.getElementById(metricKey+'Stats');
-  const statsData = cfg.lowerBetter
-    ? [{l:'Лучший',v:cfg.fmt(ranked[0][metricKey]),u:cfg.unit},{l:'Средний',v:cfg.fmt(avg),u:cfg.unit},{l:'Худший',v:cfg.fmt(ranked[ranked.length-1][metricKey]),u:cfg.unit},{l:'Участников',v:ranked.length,u:'менеджеров'}]
-    : [{l:'Лучший',v:cfg.fmt(ranked[0][metricKey]),u:cfg.unit},{l:'Средний',v:cfg.fmt(avg),u:cfg.unit},{l:'Худший',v:cfg.fmt(ranked[ranked.length-1][metricKey]),u:cfg.unit},{l:'Участников',v:ranked.length,u:'менеджеров'}];
-  statsEl.innerHTML = statsData.map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val">${s.v}</div><div class="stat-unit">${s.u}</div></div>`).join('');
+  // Стат-карточки
+  document.getElementById(key+'Stats').innerHTML=[
+    {l:'Лучший',  v:cfg.fmt(ranked[0][key]),           u:cfg.unit},
+    {l:'Средний', v:cfg.fmt(avg),                       u:cfg.unit},
+    {l:'Худший',  v:cfg.fmt(ranked[ranked.length-1][key]),u:cfg.unit},
+    {l:'Участников',v:ranked.length,                    u:'менеджеров'},
+  ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val">${s.v}</div><div class="stat-unit">${s.u}</div></div>`).join('');
 
-  // Podium
-  const podiumEl = document.getElementById(metricKey+'Podium');
-  const medals = ['🥇','🥈','🥉'];
-  const pCls = ['p1','p2','p3'];
-  podiumEl.innerHTML = ranked.slice(0,3).map((m,i)=>{
-    const idx = MANAGERS.findIndex(x=>x.name===m.name);
-    return `<div class="podium-card ${pCls[i]}">
-      <span class="podium-medal">${medals[i]}</span>
-      <div style="width:44px;height:44px;border-radius:50%;background:${color(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
+  // Подиум
+  document.getElementById(key+'Podium').innerHTML=ranked.slice(0,3).map((m,i)=>{
+    const idx=MANAGERS.findIndex(x=>x.name===m.name);
+    return `<div class="podium-card ${['p1','p2','p3'][i]}">
+      <span class="podium-medal">${['🥇','🥈','🥉'][i]}</span>
+      <div style="width:44px;height:44px;border-radius:50%;background:${clr(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
       <div class="podium-name">${m.name}</div>
-      <div style="font-size:11px;color:#888;margin-bottom:4px">${m.restaurant}</div>
-      <div class="podium-val">${cfg.fmt(m[metricKey])}</div>
+      <div style="font-size:11px;color:#888;margin-bottom:4px">${m.r}</div>
+      <div class="podium-val ${cfg.valClass(m[key])}">${cfg.fmt(m[key])}</div>
       <div class="podium-rank-label">${cfg.unit}</div>
     </div>`;
   }).join('');
 
-  // Full table
-  const tableEl = document.getElementById(metricKey+'Table');
-  const refVal = cfg.lowerBetter ? ranked[ranked.length-1][metricKey] : ranked[0][metricKey];
-  tableEl.innerHTML = ranked.map((m,i)=>{
-    const idx = MANAGERS.findIndex(x=>x.name===m.name);
-    const isTop = i<3;
-    const pClass = i===0?'p1':i===1?'p2':i===2?'p3':'';
-    const pct = cfg.lowerBetter
-      ? Math.round((1-(m[metricKey]-ranked[0][metricKey])/(ranked[ranked.length-1][metricKey]-ranked[0][metricKey]||1))*100)
-      : Math.round((m[metricKey]/refVal)*100);
-    return `<div class="lb-row${isTop?' top3':''}">
-      <div class="lb-pos ${pClass}">${i<3?posLabel(i+1):i+1}</div>
+  // Полная таблица
+  const best=ranked[0][key], worst=ranked[ranked.length-1][key];
+  document.getElementById(key+'Table').innerHTML=ranked.map((m,i)=>{
+    const idx=MANAGERS.findIndex(x=>x.name===m.name);
+    const pct=cfg.lowerBetter
+      ? Math.round((1-(m[key]-best)/(worst-best||1))*100)
+      : Math.round((m[key]-worst)/(best-worst||1)*100);
+    return `<div class="lb-row${i<3?' top3':''}">
+      <div class="lb-pos ${i===0?'p1':i===1?'p2':i===2?'p3':''}">${posLabel(i+1)}</div>
       <div class="lb-person">
-        <div class="lb-avatar" style="background:${color(idx)}">${initials(m.name)}</div>
-        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.restaurant}</div></div>
+        <div class="lb-avatar" style="background:${clr(idx)}">${initials(m.name)}</div>
+        <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.r}</div></div>
       </div>
-      <div class="lb-val">${cfg.fmt(m[metricKey])} <span>${cfg.unit}</span></div>
+      <div class="lb-val ${cfg.valClass(m[key])}">${cfg.fmt(m[key])} <span>${cfg.unit}</span></div>
       <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${pct}%"></div></div></div>
     </div>`;
   }).join('');
 }
 
-// Navigation
+// ============================================================
+// НАВИГАЦИЯ
+// ============================================================
 document.querySelectorAll('.nav-item').forEach(item=>{
   item.addEventListener('click',e=>{
     e.preventDefault();
-    const pg = item.dataset.page;
+    const pg=item.dataset.page;
     document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     item.classList.add('active');
@@ -535,13 +592,11 @@ document.querySelectorAll('.nav-item').forEach(item=>{
   });
 });
 
-// Init
+// ============================================================
+// ИНИЦИАЛИЗАЦИЯ
+// ============================================================
 buildMain();
-buildMetricPage('speed','speed');
-buildMetricPage('problem','problem');
-buildMetricPage('productivity','productivity');
-buildMetricPage('cx','cx');
-buildMetricPage('clients','clients');
+Object.keys(METRICS).forEach(key=>buildMetricPage(key));
 </script>
 </body>
 </html>
