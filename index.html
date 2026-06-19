@@ -155,7 +155,7 @@
 
 <nav class="nav">
   <a class="nav-item active" data-page="main" href="#">🏆 Главная</a>
-  <a class="nav-item" data-page="speed_delivery" href="#">🛵 Скорость доставки</a>
+  <a class="nav-item" data-page="speed_delivery" href="#">🛵 Скорость на доставку</a>
   <a class="nav-item" data-page="speed_hall" href="#">🍽️ Скорость в зал</a>
   <a class="nav-item" data-page="problem" href="#">😡 Коэф. проблемности</a>
   <a class="nav-item" data-page="productivity" href="#">🍕 Производительность</a>
@@ -195,7 +195,7 @@
   <div class="metric-header">
     <div class="metric-icon" style="background:#FFF0E6">🛵</div>
     <div>
-      <div class="metric-title">Скорость доставки</div>
+      <div class="metric-title">Скорость на доставку</div>
       <div class="metric-desc">Среднее время приготовления на доставку · Меньше = лучше · Цель: до 14 минут</div>
     </div>
     <div class="metric-week">
@@ -418,7 +418,7 @@ const MANAGERS = [
 // ============================================================
 const METRICS = {
   speed_delivery: {
-    label:"Скорость доставки", emoji:"🛵", unit:"мин",
+    label:"Скорость на доставку", emoji:"🛵", unit:"мин",
     lowerBetter:true, target:14, targetDir:"lte",
     fmt:v=>v.toFixed(1),
     valClass:v=> v<=14 ? "val-good" : v<=16 ? "val-ok" : "val-bad"
