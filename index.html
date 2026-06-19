@@ -167,33 +167,33 @@
     <span>Додо</span>
     <span class="header-sub">Дашборд смены</span>
   </div>
-  <div class="week-badge" id="weekBadge">Неделя 24 · 2025</div>
+  <div class="week-badge" id="weekBadge">Неделя 22/06-28/06 · 2026</div>
 </header>
 
 <nav class="nav">
   <a class="nav-item active" data-page="main" href="#">🏆 Главная</a>
   <a class="nav-item" data-page="speed" href="#">⚡ Скорость</a>
-  <a class="nav-item" data-page="problem" href="#">🔧 Коэф. проблемности</a>
-  <a class="nav-item" data-page="productivity" href="#">📦 Производительность</a>
-  <a class="nav-item" data-page="cx" href="#">⭐ Рейтинг CX</a>
-  <a class="nav-item" data-page="clients" href="#">👥 Рейтинг клиентов</a>
+  <a class="nav-item" data-page="problem" href="#">😡 Коэф. проблемности</a>
+  <a class="nav-item" data-page="productivity" href="#">🍕 Производительность</a>
+  <a class="nav-item" data-page="cx" href="#">👥 Рейтинг Клиентского Опыта</a>
+  <a class="nav-item" data-page="clients" href="#">⭐ Рейтинг клиентов</a>
 </nav>
 
 <!-- ===================== MAIN PAGE ===================== -->
 <div class="page active" id="page-main">
 
   <div class="king-section">
-    <div class="section-title">Король смены — неделя 24</div>
+    <div class="section-title">Король смены — неделя 22/06-28/06</div>
     <div class="king-card">
       <div class="king-crown">👑</div>
       <div class="king-info">
         <div class="king-label">Король смены</div>
-        <div class="king-name" id="kingName">Артём Волков</div>
-        <div class="king-meta" id="kingMeta">Смена утро · 5 недель в топе</div>
+        <div class="king-name" id="kingName">Эрен Йегер</div>
+        <div class="king-meta" id="kingMeta">· 5 недель в топе</div>
         <div class="king-stats" id="kingStats">
           <div class="king-stat">⚡ Скорость <strong>#1</strong></div>
-          <div class="king-stat">📦 Производительность <strong>#2</strong></div>
-          <div class="king-stat">⭐ CX <strong>#1</strong></div>
+          <div class="king-stat">🍕 Производительность <strong>#2</strong></div>
+          <div class="king-stat">👥 РКО <strong>#1</strong></div>
         </div>
       </div>
       <div class="king-score">
@@ -221,7 +221,7 @@
     <div class="metric-icon" style="background:#FFF0E6">⚡</div>
     <div>
       <div class="metric-title">Скорость</div>
-      <div class="metric-desc">Среднее время выполнения заказа за смену · Меньше = лучше</div>
+      <div class="metric-desc">Среднее время приготовления заказа за смену · Меньше = лучше</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -241,7 +241,7 @@
     <div class="metric-icon" style="background:#E8F5EE">🔧</div>
     <div>
       <div class="metric-title">Коэффициент проблемности</div>
-      <div class="metric-desc">Доля проблемных заказов в смене · Меньше = лучше</div>
+      <div class="metric-desc">Доля проблемных заказов за смену · Меньше = лучше</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -258,10 +258,10 @@
 <!-- ===================== PRODUCTIVITY PAGE ===================== -->
 <div class="page" id="page-productivity">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#E8F0FE">📦</div>
+    <div class="metric-icon" style="background:#E8F0FE">🍕</div>
     <div>
       <div class="metric-title">Производительность на смене</div>
-      <div class="metric-desc">Количество заказов за смену · Больше = лучше</div>
+      <div class="metric-desc">Продукт на человека в час · Больше = лучше</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -278,10 +278,10 @@
 <!-- ===================== CX PAGE ===================== -->
 <div class="page" id="page-cx">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#FFF8E1">⭐</div>
+    <div class="metric-icon" style="background:#FFF8E1">👥</div>
     <div>
       <div class="metric-title">Рейтинг клиентского опыта</div>
-      <div class="metric-desc">NPS / оценка клиентов за период · Больше = лучше</div>
+      <div class="metric-desc">NPS / РКО за период · Больше = лучше</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -298,10 +298,10 @@
 <!-- ===================== CLIENTS PAGE ===================== -->
 <div class="page" id="page-clients">
   <div class="metric-header">
-    <div class="metric-icon" style="background:#F0F0FF">👥</div>
+    <div class="metric-icon" style="background:#F0F0FF">⭐</div>
     <div>
       <div class="metric-title">Рейтинг клиентов</div>
-      <div class="metric-desc">Оценка от клиентов напрямую за смену · Больше = лучше</div>
+      <div class="metric-desc">Оценка от клиентов за смену · Больше = лучше</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
@@ -319,14 +319,14 @@
 // ============================================================
 // DATA — EDIT THIS SECTION EACH WEEK
 // ============================================================
-const WEEK_LABEL = "Неделя 24 · 2025";
+const WEEK_LABEL = "Неделя 22/06-28/06 · 2026";
 
 // King of the shift
 const KING = {
-  name: "Артём Волков",
-  meta: "Смена утро · 5 недель в топе",
+  name: "Эрен Йегер",
+  meta: "· 3 недели в топе",
   score: 94,
-  stats: ["⚡ Скорость #1", "📦 Производительность #2", "⭐ CX #1"]
+  stats: ["⚡ Скорость #1", "🍕 Производительность #2", "⭐ РК #1"]
 };
 
 // Avatar colors for managers
@@ -339,64 +339,64 @@ function color(i){return COLORS[i%COLORS.length]}
 const METRICS = {
   speed:       {label:"Скорость",       emoji:"⚡", unit:"мин",  lowerBetter:true,  fmt:v=>v.toFixed(1)},
   problem:     {label:"Проблемности",   emoji:"🔧", unit:"%",    lowerBetter:true,  fmt:v=>v.toFixed(1)+"%"},
-  productivity:{label:"Производительность",emoji:"📦",unit:"заказов",lowerBetter:false,fmt:v=>v},
-  cx:          {label:"Рейтинг CX",     emoji:"⭐", unit:"из 10",lowerBetter:false, fmt:v=>v.toFixed(1)},
-  clients:     {label:"Рейтинг клиентов",emoji:"👥",unit:"баллов",lowerBetter:false,fmt:v=>v.toFixed(1)},
+  productivity:{label:"Производительность",emoji:"🍕",unit:"заказов",lowerBetter:false,fmt:v=>v},
+  cx:          {label:"РКО",     emoji:"👥", unit:"из 5",lowerBetter:false, fmt:v=>v.toFixed(1)},
+  clients:     {label:"Рейтинг клиентов",emoji:"⭐",unit:"баллов",lowerBetter:false,fmt:v=>v.toFixed(1)},
 };
 
 // ============ PASTE YOUR WEEKLY DATA HERE ============
 // Each manager appears once. Values per metric.
 const MANAGERS = [
-  {name:"Брызгалов Артём",      shift:"Утро",   speed:18.2, problem:1.1, productivity:142, cx:9.4, clients:9.6},
-  {name:"Гутор Валерия",     shift:"Вечер",  speed:19.0, problem:1.4, productivity:138, cx:9.2, clients:9.1},
-  {name:"Усова Алина",   shift:"День",   speed:20.1, problem:1.2, productivity:135, cx:9.0, clients:8.9},
-  {name:"Степанова Александра",     shift:"Утро",   speed:21.3, problem:1.3, productivity:130, cx:8.8, clients:9.2},
-  {name:"Селюкова Екатерина",    shift:"Ночь",   speed:22.0, problem:1.8, productivity:128, cx:8.6, clients:8.5},
-  {name:"Степанов Даниил",    shift:"Вечер",  speed:21.8, problem:1.6, productivity:125, cx:8.7, clients:8.8},
-  {name:"Козлова Людмила",    shift:"День",   speed:23.5, problem:2.1, productivity:120, cx:8.4, clients:8.3},
-  {name:"Бахромкин Константин",    shift:"Утро",   speed:22.4, problem:1.9, productivity:118, cx:8.5, clients:8.6},
-  {name:"Финченко Артём",    shift:"Ночь",   speed:24.0, problem:2.3, productivity:115, cx:8.2, clients:8.1},
-  {name:"Строк Ксения",  shift:"Вечер",  speed:23.1, problem:2.0, productivity:113, cx:8.3, clients:8.4},
-  {name:"Корепина Наталия",     shift:"День",   speed:24.8, problem:2.4, productivity:110, cx:8.0, clients:8.0},
-  {name:"Андрусов Олег",    shift:"Утро",   speed:25.0, problem:2.6, productivity:108, cx:7.9, clients:7.8},
-  {name:"Лыткина Татьяна",   shift:"Ночь",   speed:25.5, problem:2.8, productivity:105, cx:7.7, clients:7.9},
-  {name:"Гришанова Диана",     shift:"Вечер",  speed:26.1, problem:2.5, productivity:103, cx:7.8, clients:7.7},
-  {name:"Гаврилица Олег",     shift:"День",   speed:26.8, problem:3.0, productivity:100, cx:7.6, clients:7.5},
-  {name:"Дубчак Максим", shift:"Утро",   speed:27.0, problem:3.1, productivity:98,  cx:7.5, clients:7.6},
-  {name:"Ядловский Кирилл",     shift:"Ночь",   speed:27.5, problem:3.3, productivity:96,  cx:7.4, clients:7.3},
-  {name:"Кирюшова Наталия",     shift:"Вечер",  speed:28.0, problem:3.5, productivity:94,  cx:7.3, clients:7.2},
-  {name:"Прокашев Дмитрий",    shift:"День",   speed:28.5, problem:3.7, productivity:92,  cx:7.1, clients:7.0},
-  {name:"Куприянов Константин",   shift:"Утро",   speed:29.0, problem:3.8, productivity:90,  cx:7.0, clients:7.1},
-  {name:"Вебер Ксения",      shift:"Ночь",   speed:29.5, problem:4.0, productivity:88,  cx:6.9, clients:6.8},
-  {name:"Леликова Мария",   shift:"Вечер",  speed:30.0, problem:4.2, productivity:86,  cx:6.8, clients:6.9},
-  {name:"Симонов Олег",    shift:"День",   speed:30.5, problem:4.5, productivity:84,  cx:6.7, clients:6.6},
-  {name:"Кузнецов Фёдор",   shift:"Утро",   speed:31.0, problem:4.7, productivity:82,  cx:6.5, clients:6.5},
-  {name:"Корниенко Даниил",shift:"Ночь",  speed:31.5, problem:5.0, productivity:80,  cx:6.4, clients:6.3},
-  {name:"Тошова Амина",  shift:"Вечер",  speed:32.0, problem:5.2, productivity:78,  cx:6.3, clients:6.2},
-  {name:"Небесная Анастасия",    shift:"День",   speed:32.5, problem:5.5, productivity:76,  cx:6.2, clients:6.1},
-  {name:"Добрянская Анастасия",shift:"Утро",   speed:33.0, problem:5.8, productivity:74,  cx:6.0, clients:6.0},
-  {name:"Тарасов Алексей",     shift:"Ночь",   speed:33.5, problem:6.0, productivity:72,  cx:5.9, clients:5.8},
-  {name:"Сафронова Ольга", shift:"Вечер",  speed:34.0, problem:6.3, productivity:70,  cx:5.8, clients:5.7},
-  {name:"Кузахметова Кристина",      shift:"День",   speed:34.5, problem:6.5, productivity:68,  cx:5.7, clients:5.6},
-  {name:"Парфёнова Дарья",  shift:"Утро",   speed:35.0, problem:6.8, productivity:66,  cx:5.5, clients:5.5},
-  {name:"Хомячук Александра",    shift:"Ночь",   speed:35.5, problem:7.0, productivity:64,  cx:5.4, clients:5.3},
-  {name:"Максютов Данила", shift:"Вечер",  speed:36.0, problem:7.3, productivity:62,  cx:5.3, clients:5.2},
-  {name:"Бекенев Александр",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Мустафина Эвелина",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Макеева Мария",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Фролов Вадим",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Вельможин Владислав",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Буранбаева Екатерина",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Абдрахимова Римма",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Латыпова Эльвира",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Гафиятуллина Юлия",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Нигматуллина Элона",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Назаров Айгизар",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Раева Айгиза",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Афанасьева Ангелина",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Волкодав Лейля",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Пальцева Кристина",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
-  {name:"Галлямов Ильнур",shift:"День",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Брызгалов Артём",       speed:18.2, problem:1.1, productivity:142, cx:9.4, clients:9.6},
+  {name:"Гутор Валерия",      speed:19.0, problem:1.4, productivity:138, cx:9.2, clients:9.1},
+  {name:"Усова Алина",     speed:20.1, problem:1.2, productivity:135, cx:9.0, clients:8.9},
+  {name:"Степанова Александра",       speed:21.3, problem:1.3, productivity:130, cx:8.8, clients:9.2},
+  {name:"Селюкова Екатерина",       speed:22.0, problem:1.8, productivity:128, cx:8.6, clients:8.5},
+  {name:"Степанов Даниил",     speed:21.8, problem:1.6, productivity:125, cx:8.7, clients:8.8},
+  {name:"Козлова Людмила",     speed:23.5, problem:2.1, productivity:120, cx:8.4, clients:8.3},
+  {name:"Бахромкин Константин",       speed:22.4, problem:1.9, productivity:118, cx:8.5, clients:8.6},
+  {name:"Финченко Артём",      speed:24.0, problem:2.3, productivity:115, cx:8.2, clients:8.1},
+  {name:"Строк Ксения",   speed:23.1, problem:2.0, productivity:113, cx:8.3, clients:8.4},
+  {name:"Корепина Наталия",        speed:24.8, problem:2.4, productivity:110, cx:8.0, clients:8.0},
+  {name:"Андрусов Олег",       speed:25.0, problem:2.6, productivity:108, cx:7.9, clients:7.8},
+  {name:"Лыткина Татьяна",     speed:25.5, problem:2.8, productivity:105, cx:7.7, clients:7.9},
+  {name:"Гришанова Диана",      speed:26.1, problem:2.5, productivity:103, cx:7.8, clients:7.7},
+  {name:"Гаврилица Олег",       speed:26.8, problem:3.0, productivity:100, cx:7.6, clients:7.5},
+  {name:"Дубчак Максим",    speed:27.0, problem:3.1, productivity:98,  cx:7.5, clients:7.6},
+  {name:"Ядловский Кирилл",       speed:27.5, problem:3.3, productivity:96,  cx:7.4, clients:7.3},
+  {name:"Кирюшова Наталия",       speed:28.0, problem:3.5, productivity:94,  cx:7.3, clients:7.2},
+  {name:"Прокашев Дмитрий",       speed:28.5, problem:3.7, productivity:92,  cx:7.1, clients:7.0},
+  {name:"Куприянов Константин",     speed:29.0, problem:3.8, productivity:90,  cx:7.0, clients:7.1},
+  {name:"Вебер Ксения",       speed:29.5, problem:4.0, productivity:88,  cx:6.9, clients:6.8},
+  {name:"Леликова Мария",     speed:30.0, problem:4.2, productivity:86,  cx:6.8, clients:6.9},
+  {name:"Симонов Олег",     speed:30.5, problem:4.5, productivity:84,  cx:6.7, clients:6.6},
+  {name:"Кузнецов Фёдор",    speed:31.0, problem:4.7, productivity:82,  cx:6.5, clients:6.5},
+  {name:"Корниенко Даниил", speed:31.5, problem:5.0, productivity:80,  cx:6.4, clients:6.3},
+  {name:"Тошова Амина",    speed:32.0, problem:5.2, productivity:78,  cx:6.3, clients:6.2},
+  {name:"Небесная Анастасия",      speed:32.5, problem:5.5, productivity:76,  cx:6.2, clients:6.1},
+  {name:"Добрянская Анастасия",   speed:33.0, problem:5.8, productivity:74,  cx:6.0, clients:6.0},
+  {name:"Тарасов Алексей",       speed:33.5, problem:6.0, productivity:72,  cx:5.9, clients:5.8},
+  {name:"Сафронова Ольга",   speed:34.0, problem:6.3, productivity:70,  cx:5.8, clients:5.7},
+  {name:"Кузахметова Кристина",         speed:34.5, problem:6.5, productivity:68,  cx:5.7, clients:5.6},
+  {name:"Парфёнова Дарья",     speed:35.0, problem:6.8, productivity:66,  cx:5.5, clients:5.5},
+  {name:"Хомячук Александра",     speed:35.5, problem:7.0, productivity:64,  cx:5.4, clients:5.3},
+  {name:"Максютов Данила",   speed:36.0, problem:7.3, productivity:62,  cx:5.3, clients:5.2},
+  {name:"Бекенев Александр",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Мустафина Эвелина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Макеева Мария",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Фролов Вадим",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Вельможин Владислав",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Буранбаева Екатерина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Абдрахимова Римма",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Латыпова Эльвира",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Гафиятуллина Юлия",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Нигматуллина Элона", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Назаров Айгизар", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Раева Айгиза", speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Афанасьева Ангелина",  speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Волкодав Лейля",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Пальцева Кристина",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
+  {name:"Галлямов Ильнур",   speed:36.5, problem:7.5, productivity:60,  cx:5.1, clients:5.0},
 ];
 // =====================================================
 
