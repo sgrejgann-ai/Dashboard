@@ -399,7 +399,7 @@ const METRICS = {
   problem: {
     label:"Тикеты", emoji:"😡", unit:"кол-во",
     lowerBetter:true,
-    fmt: v => v.toFixed(1) + "шт",
+    fmt: v => v.toFixed(0) + "шт",
     valClass: v => v <= 2 ? "val-good" : v <= 5 ? "val-ok" : "val-bad"
   },
   productivity: {
@@ -411,7 +411,7 @@ const METRICS = {
   cx: {
     label:"РКО", emoji:"👥", unit:"баллов",
     lowerBetter:false,
-    fmt: v => v.toFixed(1),
+    fmt: v => v.toFixed(0),
     valClass: v => v >= 95 ? "val-good" : v >= 90 ? "val-ok" : "val-bad"
   },
   clients: {
