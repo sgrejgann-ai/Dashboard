@@ -399,7 +399,7 @@ const METRICS = {
   problem: {
     label:"Проблемности", emoji:"😡", unit:"%",
     lowerBetter:true,
-    fmt: v => v.toFixed(1) + "%",
+    fmt: v => v.toFixed(2) + "%",
     valClass: v => v <= 2 ? "val-good" : v <= 5 ? "val-ok" : "val-bad"
   },
   productivity: {
