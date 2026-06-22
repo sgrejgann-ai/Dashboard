@@ -385,13 +385,13 @@ const METRICS = {
   speed_delivery: {
     label:"Скорость на доставку", emoji:"🛵", unit:"мин",
     lowerBetter:true,
-    fmt: v => v.toFixed(1),
+    fmt: v => v.toFixed(2),
     valClass: v => v <= 14 ? "val-good" : v <= 16 ? "val-ok" : "val-bad"
   },
   speed_hall: {
     label:"Скорость в зал", emoji:"🍽️", unit:"мин",
     lowerBetter:true,
-    fmt: v => v.toFixed(1),
+    fmt: v => v.toFixed(2),
     valClass: v => v <= 10 ? "val-good" : v <= 12 ? "val-ok" : "val-bad"
   },
   problem: {
