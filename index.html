@@ -37,7 +37,6 @@
 
   .section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:14px}
 
-  /* KING */
   .king-section{margin-bottom:28px}
   .king-card{background:linear-gradient(135deg,#1A1A1A 0%,#2D2D2D 100%);border-radius:20px;padding:28px 32px;display:flex;align-items:center;gap:28px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15)}
   .king-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,107,0,0.15) 0%,transparent 70%);pointer-events:none}
@@ -53,7 +52,6 @@
   .king-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:7px 12px;font-size:12px;color:rgba(255,255,255,0.7)}
   .king-stat strong{color:#fff;font-weight:600}
 
-  /* LEADERS GRID */
   .leaders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:28px}
   .leader-card{background:var(--card);border-radius:14px;padding:18px 16px;border:1.5px solid var(--border);position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
   .leader-card:hover{transform:translateY(-2px);border-color:var(--orange)}
@@ -65,7 +63,6 @@
   .leader-metric-val{font-size:22px;font-weight:800;color:var(--orange)}
   .leader-unit{font-size:12px;color:var(--text3);margin-left:2px;font-weight:500}
 
-  /* LEADERBOARD */
   .lb-wrap{background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden;margin-bottom:28px}
   .lb-header{display:grid;grid-template-columns:52px 1fr 120px 90px;gap:0;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text3)}
   .lb-row{display:grid;grid-template-columns:52px 1fr 120px 90px;gap:0;padding:12px 16px;border-bottom:1px solid var(--bg-dark);align-items:center;transition:background .1s}
@@ -73,6 +70,7 @@
   .lb-row:hover{background:var(--bg)}
   .lb-row.top3{background:var(--orange-light)}
   .lb-row.top3:hover{background:#FFE8D6}
+  .lb-row.no-data{opacity:0.55}
   .lb-pos{font-size:16px;font-weight:800;color:var(--text3)}
   .lb-pos.p1{color:var(--rank1)}.lb-pos.p2{color:var(--rank2)}.lb-pos.p3{color:var(--rank3)}
   .lb-person{display:flex;align-items:center;gap:10px}
@@ -81,23 +79,11 @@
   .lb-psub{font-size:11px;color:var(--text3)}
   .lb-val{font-size:16px;font-weight:700;color:var(--text);text-align:right}
   .lb-val span{font-size:11px;color:var(--text3);font-weight:400}
+  .lb-val.no-data-val{font-size:18px;color:var(--text3) !important;font-weight:500}
   .lb-bar-wrap{padding-right:12px}
   .lb-bar{height:6px;background:var(--bg-dark);border-radius:3px;overflow:hidden}
   .lb-bar-fill{height:100%;border-radius:3px;background:var(--orange)}
 
-  /* SPEED TABS */
-  .speed-tabs{display:flex;gap:8px;margin-bottom:20px}
-  .speed-tab{padding:9px 20px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--text2);transition:all .15s}
-  .speed-tab.active{background:var(--orange);color:#fff;border-color:var(--orange)}
-  .speed-panel{display:none}
-  .speed-panel.active{display:block}
-
-  /* TARGET BADGE */
-  .target-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;margin-left:10px}
-  .target-good{background:var(--green-light);color:var(--green)}
-  .target-bad{background:var(--red-light);color:var(--red)}
-
-  /* METRIC HEADER */
   .metric-header{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:22px 24px;margin-bottom:20px;display:flex;align-items:center;gap:20px}
   .metric-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
   .metric-title{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.3px}
@@ -106,14 +92,12 @@
   .metric-week-label{font-size:11px;color:var(--text3);font-weight:500}
   .metric-week-val{font-size:24px;font-weight:800;color:var(--orange)}
 
-  /* STATS ROW */
   .stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:20px}
   .stat-card{background:var(--card);border-radius:12px;border:1px solid var(--border);padding:16px}
   .stat-label{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.7px;margin-bottom:8px}
   .stat-val{font-size:26px;font-weight:800;color:var(--text);line-height:1}
   .stat-unit{font-size:12px;color:var(--text3);font-weight:500;margin-top:4px}
 
-  /* PODIUM */
   .podium{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
   .podium-card{background:var(--card);border-radius:16px;border:1.5px solid var(--border);padding:20px 16px;text-align:center}
   .podium-card.p1{border-color:var(--orange)}.podium-card.p2{border-color:#C0C0C0}.podium-card.p3{border-color:var(--rank3)}
@@ -122,7 +106,9 @@
   .podium-val{font-size:28px;font-weight:900;color:var(--orange);margin:6px 0 2px}
   .podium-rank-label{font-size:11px;color:var(--text3);font-weight:500}
 
-  /* VALUE COLORING */
+  /* Пометка "нет данных" в таблице */
+  .no-data-note{font-size:11px;color:var(--text3);font-style:italic;margin-top:2px}
+
   .val-good{color:var(--green) !important}
   .val-bad{color:var(--red) !important}
   .val-ok{color:var(--orange) !important}
@@ -163,7 +149,7 @@
   <a class="nav-item" data-page="clients" href="#">⭐ Рейтинг клиентов</a>
 </nav>
 
-<!-- ===================== MAIN PAGE ===================== -->
+<!-- MAIN -->
 <div class="page active" id="page-main">
   <div class="king-section">
     <div class="section-title" id="kingWeekTitle">Король смены</div>
@@ -190,7 +176,7 @@
   </div>
 </div>
 
-<!-- ===================== SPEED DELIVERY PAGE ===================== -->
+<!-- SPEED DELIVERY -->
 <div class="page" id="page-speed_delivery">
   <div class="metric-header">
     <div class="metric-icon" style="background:#FFF0E6">🛵</div>
@@ -207,13 +193,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="speed_deliveryPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="speed_deliveryTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="speed_deliveryTable"></div></div>
 </div>
 
-<!-- ===================== SPEED HALL PAGE ===================== -->
+<!-- SPEED HALL -->
 <div class="page" id="page-speed_hall">
   <div class="metric-header">
     <div class="metric-icon" style="background:#FFF8E1">🍽️</div>
@@ -230,13 +213,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="speed_hallPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="speed_hallTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="speed_hallTable"></div></div>
 </div>
 
-<!-- ===================== PROBLEM PAGE ===================== -->
+<!-- PROBLEM -->
 <div class="page" id="page-problem">
   <div class="metric-header">
     <div class="metric-icon" style="background:#FDECEB">😡</div>
@@ -253,13 +233,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="problemPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="problemTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="problemTable"></div></div>
 </div>
 
-<!-- ===================== PRODUCTIVITY PAGE ===================== -->
+<!-- PRODUCTIVITY -->
 <div class="page" id="page-productivity">
   <div class="metric-header">
     <div class="metric-icon" style="background:#E8F0FE">🍕</div>
@@ -276,13 +253,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="productivityPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="productivityTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="productivityTable"></div></div>
 </div>
 
-<!-- ===================== CX PAGE ===================== -->
+<!-- CX -->
 <div class="page" id="page-cx">
   <div class="metric-header">
     <div class="metric-icon" style="background:#E8F5EE">👥</div>
@@ -299,13 +273,10 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="cxPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="cxTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="cxTable"></div></div>
 </div>
 
-<!-- ===================== CLIENTS PAGE ===================== -->
+<!-- CLIENTS -->
 <div class="page" id="page-clients">
   <div class="metric-header">
     <div class="metric-icon" style="background:#F0F0FF">⭐</div>
@@ -322,95 +293,89 @@
   <div class="section-title">Топ-3 недели</div>
   <div class="podium" id="clientsPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap">
-    <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div>
-    <div id="clientsTable"></div>
-  </div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="clientsTable"></div></div>
 </div>
 
 <script>
 // ============================================================
 // ЧТО МЕНЯТЬ КАЖДУЮ НЕДЕЛЮ:
 //   1. WEEK_LABEL — период недели
-//   2. KING — имя, мета-строка, балл, жетоны достижений
-//   3. MANAGERS — данные каждого менеджера
+//   2. KING       — имя, мета-строка, балл, жетоны достижений (вручную)
+//   3. MANAGERS   — данные каждого менеджера
 //
-// БАЛЛЫ СЧИТАЮТСЯ АВТОМАТИЧЕСКИ на основе мест в каждом показателе.
-// Каждый показатель даёт от 0 до 100 очков (1 место = 100, последнее = 0).
-// Итоговый балл = среднее по всем 6 метрикам.
+// ЕСЛИ У МЕНЕДЖЕРА НЕТ ДАННЫХ ЗА НЕДЕЛЮ — ставь null (без кавычек):
+//   {name:"Иванов", r:"12-1", speed_delivery:null, speed_hall:null, problem:null, productivity:null, cx:null, clients:null}
+//
+// Менеджер с null по показателю:
+//   - не участвует в ранжировании по этому показателю
+//   - отображается в конце таблицы с прочерком "—"
+//   - не влияет на общий балл по этому показателю
 // ============================================================
 
 const WEEK_LABEL = "Неделя 15/06–21/06 · 2026";
 
-// Король смены — ЗАПОЛНЯТЬ ВРУЧНУЮ каждую неделю
 const KING = {
   name:  "Эрен Йегер",
   meta:  "· 3 недели в топе",
-  score: 100,   // можно поставить вычисленный балл из таблицы
+  score: 100,
   stats: ["🛵 Доставка #1", "🍕 Производительность #1", "👥 РКО #1"]
 };
 
 // ============================================================
-// ДАННЫЕ МЕНЕДЖЕРОВ — МЕНЯЙ СЮДА КАЖДУЮ НЕДЕЛЮ
-//
-// speed_delivery  — скорость доставки, мин       (цель ≤ 14)
-// speed_hall      — скорость в зал, мин          (цель ≤ 10)
-// problem         — коэф. проблемности, %        (меньше лучше)
-// productivity    — продуктов на ч/ч             (7.3–9.0, больше лучше)
-// cx              — рейтинг клиент. опыта, баллы (до 100, хорошо ≥ 95)
-// clients         — рейтинг клиентов             (до 5.0, больше лучше)
+// ДАННЫЕ МЕНЕДЖЕРОВ
+// null = данных нет за эту неделю (будет прочерк)
 // ============================================================
 const MANAGERS = [
-  {name:"Брызгалов Артём",        r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:15.3, productivity:9.1, cx:94, clients:4,78},
-  {name:"Гутор Валерия",          r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:no, productivity:8.6, cx:94, clients:4.89},
-  {name:"Усова Алина",            r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:30.8, productivity:8.3, cx:94, clients:4.87},
-  {name:"Степанова Александра",   r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:23, productivity:7.8, cx:94, clients:4.87},
-  {name:"Селюкова Екатерина",     r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:30.8, productivity:8.6, cx:94, clients:4.81},
-  {name:"Степанов Даниил",        r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:no, productivity:no, cx:94, clients:no},
-  {name:"Козлова Людмила",        r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:no, productivity:7.3, cx:94, clients:5},
-  {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:14.5, speed_hall:10.1, problem:1.9, productivity:8.1, cx:94.2, clients:4.5},
-  {name:"Финченко Артём",         r:"12-2",         speed_delivery:14.8, speed_hall:10.3, problem:2.3, productivity:8.0, cx:93.9, clients:4.5},
-  {name:"Строк Ксения",           r:"12-2",         speed_delivery:15.0, speed_hall:10.4, problem:2.0, productivity:7.9, cx:93.5, clients:4.4},
-  {name:"Корепина Наталия",       r:"12-2",         speed_delivery:15.3, speed_hall:10.6, problem:2.4, productivity:7.8, cx:93.1, clients:4.4},
-  {name:"Андрусов Олег",          r:"12-2",         speed_delivery:15.6, speed_hall:10.8, problem:2.6, productivity:7.7, cx:92.7, clients:4.3},
-  {name:"Лыткина Татьяна",        r:"12-3",         speed_delivery:15.9, speed_hall:11.0, problem:2.8, productivity:7.6, cx:92.3, clients:4.3},
-  {name:"Гришанова Диана",        r:"12-3",         speed_delivery:16.1, speed_hall:11.2, problem:2.5, productivity:7.6, cx:91.9, clients:4.2},
-  {name:"Гаврилица Олег",         r:"12-3",         speed_delivery:16.4, speed_hall:11.4, problem:3.0, productivity:7.5, cx:91.5, clients:4.2},
-  {name:"Дубчак Максим",          r:"12-3",         speed_delivery:16.7, speed_hall:11.6, problem:3.1, productivity:7.5, cx:91.1, clients:4.1},
-  {name:"Ядловский Кирилл",       r:"12-5",         speed_delivery:17.0, speed_hall:11.8, problem:3.3, productivity:7.4, cx:90.7, clients:4.1},
-  {name:"Кирюшова Наталия",       r:"12-5",         speed_delivery:17.3, speed_hall:12.0, problem:3.5, productivity:7.4, cx:90.3, clients:4.0},
-  {name:"Прокашев Дмитрий",       r:"12-5",         speed_delivery:17.6, speed_hall:12.2, problem:3.7, productivity:7.3, cx:89.8, clients:4.0},
-  {name:"Куприянов Константин",   r:"12-5",         speed_delivery:17.9, speed_hall:12.4, problem:3.8, productivity:7.3, cx:89.4, clients:3.9},
-  {name:"Вебер Ксения",           r:"12-5",         speed_delivery:18.2, speed_hall:12.6, problem:4.0, productivity:7.8, cx:88.9, clients:3.9},
-  {name:"Леликова Мария",         r:"12-5",         speed_delivery:18.5, speed_hall:12.8, problem:4.2, productivity:7.7, cx:88.5, clients:3.8},
-  {name:"Симонов Олег",           r:"12-6",         speed_delivery:18.8, speed_hall:13.0, problem:4.5, productivity:7.6, cx:88.0, clients:3.8},
-  {name:"Кузнецов Фёдор",         r:"12-6",         speed_delivery:19.1, speed_hall:13.2, problem:4.7, productivity:7.6, cx:87.6, clients:3.7},
-  {name:"Корниенко Даниил",       r:"12-6",         speed_delivery:19.4, speed_hall:13.4, problem:5.0, productivity:7.5, cx:87.1, clients:3.7},
-  {name:"Тошова Амина",           r:"12-6",         speed_delivery:19.7, speed_hall:13.6, problem:5.2, productivity:7.5, cx:86.6, clients:3.6},
-  {name:"Небесная Анастасия",     r:"Металлострой", speed_delivery:20.0, speed_hall:13.8, problem:5.5, productivity:7.4, cx:86.1, clients:3.6},
-  {name:"Добрянская Анастасия",   r:"Металлострой", speed_delivery:20.3, speed_hall:14.0, problem:5.8, productivity:7.4, cx:85.6, clients:3.5},
-  {name:"Тарасов Алексей",        r:"Металлострой", speed_delivery:20.6, speed_hall:14.3, problem:6.0, productivity:7.3, cx:85.1, clients:3.5},
-  {name:"Сафронова Ольга",        r:"Металлострой", speed_delivery:20.9, speed_hall:14.6, problem:6.3, productivity:7.3, cx:84.5, clients:3.4},
-  {name:"Кузахметова Кристина",   r:"Пушкин",       speed_delivery:21.2, speed_hall:14.9, problem:6.5, productivity:7.8, cx:84.0, clients:3.4},
-  {name:"Парфёнова Дарья",        r:"Пушкин",       speed_delivery:21.5, speed_hall:15.2, problem:6.8, productivity:7.7, cx:83.5, clients:3.3},
-  {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:21.8, speed_hall:15.5, problem:7.0, productivity:7.6, cx:82.9, clients:3.3},
-  {name:"Максютов Данила",        r:"Пушкин",       speed_delivery:22.1, speed_hall:15.8, problem:7.3, productivity:7.5, cx:82.4, clients:3.2},
-  {name:"Бекенев Александр",      r:"Пушкин",       speed_delivery:22.4, speed_hall:16.1, problem:7.5, productivity:7.4, cx:81.8, clients:3.2},
-  {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:22.7, speed_hall:16.4, problem:7.7, productivity:7.7, cx:81.2, clients:3.1},
-  {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:23.0, speed_hall:16.7, problem:7.9, productivity:7.6, cx:80.6, clients:3.1},
-  {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:23.3, speed_hall:17.0, problem:8.1, productivity:7.5, cx:80.0, clients:3.0},
-  {name:"Вельможин Владислав",    r:"Кумертау",     speed_delivery:23.6, speed_hall:17.3, problem:8.3, productivity:7.4, cx:79.4, clients:3.0},
-  {name:"Буранбаева Екатерина",   r:"Мелеуз",       speed_delivery:23.9, speed_hall:17.6, problem:8.5, productivity:7.8, cx:78.8, clients:2.9},
-  {name:"Абдрахимова Римма",      r:"Мелеуз",       speed_delivery:24.2, speed_hall:17.9, problem:8.7, productivity:7.7, cx:78.1, clients:2.9},
-  {name:"Латыпова Эльвира",       r:"Мелеуз",       speed_delivery:24.5, speed_hall:18.2, problem:8.9, productivity:7.6, cx:77.5, clients:2.8},
-  {name:"Гафиятуллина Юлия",      r:"Мелеуз",       speed_delivery:24.8, speed_hall:18.5, problem:9.1, productivity:7.5, cx:76.8, clients:2.8},
-  {name:"Нигматуллина Элона",     r:"Сибай",        speed_delivery:25.1, speed_hall:18.8, problem:9.3, productivity:7.4, cx:76.1, clients:2.7},
-  {name:"Назаров Айгизар",        r:"Сибай",        speed_delivery:25.4, speed_hall:19.1, problem:9.5, productivity:7.3, cx:75.4, clients:2.7},
-  {name:"Раева Айгиза",           r:"Сибай",        speed_delivery:25.7, speed_hall:19.4, problem:9.7, productivity:7.8, cx:74.7, clients:2.6},
-  {name:"Афанасьева Ангелина",    r:"Сибай",        speed_delivery:26.0, speed_hall:19.7, problem:9.9, productivity:7.7, cx:74.0, clients:2.6},
-  {name:"Волкодав Лейля",         r:"Белебей",      speed_delivery:26.3, speed_hall:20.0, problem:10.1,productivity:7.6, cx:73.3, clients:2.5},
-  {name:"Пальцева Кристина",      r:"Белебей",      speed_delivery:26.6, speed_hall:20.3, problem:10.3,productivity:7.5, cx:72.6, clients:2.5},
-  {name:"Галлямов Ильнур",        r:"Белебей",      speed_delivery:26.9, speed_hall:20.6, problem:10.5,productivity:7.3, cx:71.9, clients:2.4},
+  {name:"Брызгалов Артём",        r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:15.3, productivity:9.1,  cx:94,   clients:4.78},
+  {name:"Гутор Валерия",          r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:0, productivity:8.6,  cx:94,   clients:4.89},
+  {name:"Усова Алина",            r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:30.8, productivity:8.3,  cx:94,   clients:4.87},
+  {name:"Степанова Александра",   r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:23,   productivity:7.8,  cx:94,   clients:4.87},
+  {name:"Селюкова Екатерина",     r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:30.8, productivity:8.6,  cx:94,   clients:4.81},
+  {name:"Степанов Даниил",        r:"12-1",         speed_delivery:null, speed_hall:null,  problem:null, productivity:null, cx:94,   clients:null},
+  {name:"Козлова Людмила",        r:"12-1",         speed_delivery:12.23, speed_hall:9.15,  problem:0, productivity:7.3,  cx:94,   clients:5.0},
+  {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:14.5,  speed_hall:10.1,  problem:1.9,  productivity:8.1,  cx:94.2, clients:4.5},
+  {name:"Финченко Артём",         r:"12-2",         speed_delivery:14.8,  speed_hall:10.3,  problem:2.3,  productivity:8.0,  cx:93.9, clients:4.5},
+  {name:"Строк Ксения",           r:"12-2",         speed_delivery:15.0,  speed_hall:10.4,  problem:2.0,  productivity:7.9,  cx:93.5, clients:4.4},
+  {name:"Корепина Наталия",       r:"12-2",         speed_delivery:15.3,  speed_hall:10.6,  problem:2.4,  productivity:7.8,  cx:93.1, clients:4.4},
+  {name:"Андрусов Олег",          r:"12-2",         speed_delivery:15.6,  speed_hall:10.8,  problem:2.6,  productivity:7.7,  cx:92.7, clients:4.3},
+  {name:"Лыткина Татьяна",        r:"12-3",         speed_delivery:15.9,  speed_hall:11.0,  problem:2.8,  productivity:7.6,  cx:92.3, clients:4.3},
+  {name:"Гришанова Диана",        r:"12-3",         speed_delivery:16.1,  speed_hall:11.2,  problem:2.5,  productivity:7.6,  cx:91.9, clients:4.2},
+  {name:"Гаврилица Олег",         r:"12-3",         speed_delivery:16.4,  speed_hall:11.4,  problem:3.0,  productivity:7.5,  cx:91.5, clients:4.2},
+  {name:"Дубчак Максим",          r:"12-3",         speed_delivery:16.7,  speed_hall:11.6,  problem:3.1,  productivity:7.5,  cx:91.1, clients:4.1},
+  {name:"Ядловский Кирилл",       r:"12-5",         speed_delivery:17.0,  speed_hall:11.8,  problem:3.3,  productivity:7.4,  cx:90.7, clients:4.1},
+  {name:"Кирюшова Наталия",       r:"12-5",         speed_delivery:17.3,  speed_hall:12.0,  problem:3.5,  productivity:7.4,  cx:90.3, clients:4.0},
+  {name:"Прокашев Дмитрий",       r:"12-5",         speed_delivery:17.6,  speed_hall:12.2,  problem:3.7,  productivity:7.3,  cx:89.8, clients:4.0},
+  {name:"Куприянов Константин",   r:"12-5",         speed_delivery:17.9,  speed_hall:12.4,  problem:3.8,  productivity:7.3,  cx:89.4, clients:3.9},
+  {name:"Вебер Ксения",           r:"12-5",         speed_delivery:18.2,  speed_hall:12.6,  problem:4.0,  productivity:7.8,  cx:88.9, clients:3.9},
+  {name:"Леликова Мария",         r:"12-5",         speed_delivery:18.5,  speed_hall:12.8,  problem:4.2,  productivity:7.7,  cx:88.5, clients:3.8},
+  {name:"Симонов Олег",           r:"12-6",         speed_delivery:18.8,  speed_hall:13.0,  problem:4.5,  productivity:7.6,  cx:88.0, clients:3.8},
+  {name:"Кузнецов Фёдор",         r:"12-6",         speed_delivery:19.1,  speed_hall:13.2,  problem:4.7,  productivity:7.6,  cx:87.6, clients:3.7},
+  {name:"Корниенко Даниил",       r:"12-6",         speed_delivery:19.4,  speed_hall:13.4,  problem:5.0,  productivity:7.5,  cx:87.1, clients:3.7},
+  {name:"Тошова Амина",           r:"12-6",         speed_delivery:19.7,  speed_hall:13.6,  problem:5.2,  productivity:7.5,  cx:86.6, clients:3.6},
+  {name:"Небесная Анастасия",     r:"Металлострой", speed_delivery:20.0,  speed_hall:13.8,  problem:5.5,  productivity:7.4,  cx:86.1, clients:3.6},
+  {name:"Добрянская Анастасия",   r:"Металлострой", speed_delivery:20.3,  speed_hall:14.0,  problem:5.8,  productivity:7.4,  cx:85.6, clients:3.5},
+  {name:"Тарасов Алексей",        r:"Металлострой", speed_delivery:20.6,  speed_hall:14.3,  problem:6.0,  productivity:7.3,  cx:85.1, clients:3.5},
+  {name:"Сафронова Ольга",        r:"Металлострой", speed_delivery:20.9,  speed_hall:14.6,  problem:6.3,  productivity:7.3,  cx:84.5, clients:3.4},
+  {name:"Кузахметова Кристина",   r:"Пушкин",       speed_delivery:21.2,  speed_hall:14.9,  problem:6.5,  productivity:7.8,  cx:84.0, clients:3.4},
+  {name:"Парфёнова Дарья",        r:"Пушкин",       speed_delivery:21.5,  speed_hall:15.2,  problem:6.8,  productivity:7.7,  cx:83.5, clients:3.3},
+  {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:21.8,  speed_hall:15.5,  problem:7.0,  productivity:7.6,  cx:82.9, clients:3.3},
+  {name:"Максютов Данила",        r:"Пушкин",       speed_delivery:22.1,  speed_hall:15.8,  problem:7.3,  productivity:7.5,  cx:82.4, clients:3.2},
+  {name:"Бекенев Александр",      r:"Пушкин",       speed_delivery:22.4,  speed_hall:16.1,  problem:7.5,  productivity:7.4,  cx:81.8, clients:3.2},
+  {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:22.7,  speed_hall:16.4,  problem:7.7,  productivity:7.7,  cx:81.2, clients:3.1},
+  {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:23.0,  speed_hall:16.7,  problem:7.9,  productivity:7.6,  cx:80.6, clients:3.1},
+  {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:23.3,  speed_hall:17.0,  problem:8.1,  productivity:7.5,  cx:80.0, clients:3.0},
+  {name:"Вельможин Владислав",    r:"Кумертау",     speed_delivery:23.6,  speed_hall:17.3,  problem:8.3,  productivity:7.4,  cx:79.4, clients:3.0},
+  {name:"Буранбаева Екатерина",   r:"Мелеуз",       speed_delivery:23.9,  speed_hall:17.6,  problem:8.5,  productivity:7.8,  cx:78.8, clients:2.9},
+  {name:"Абдрахимова Римма",      r:"Мелеуз",       speed_delivery:24.2,  speed_hall:17.9,  problem:8.7,  productivity:7.7,  cx:78.1, clients:2.9},
+  {name:"Латыпова Эльвира",       r:"Мелеуз",       speed_delivery:24.5,  speed_hall:18.2,  problem:8.9,  productivity:7.6,  cx:77.5, clients:2.8},
+  {name:"Гафиятуллина Юлия",      r:"Мелеуз",       speed_delivery:24.8,  speed_hall:18.5,  problem:9.1,  productivity:7.5,  cx:76.8, clients:2.8},
+  {name:"Нигматуллина Элона",     r:"Сибай",        speed_delivery:25.1,  speed_hall:18.8,  problem:9.3,  productivity:7.4,  cx:76.1, clients:2.7},
+  {name:"Назаров Айгизар",        r:"Сибай",        speed_delivery:25.4,  speed_hall:19.1,  problem:9.5,  productivity:7.3,  cx:75.4, clients:2.7},
+  {name:"Раева Айгиза",           r:"Сибай",        speed_delivery:25.7,  speed_hall:19.4,  problem:9.7,  productivity:7.8,  cx:74.7, clients:2.6},
+  {name:"Афанасьева Ангелина",    r:"Сибай",        speed_delivery:26.0,  speed_hall:19.7,  problem:9.9,  productivity:7.7,  cx:74.0, clients:2.6},
+  {name:"Волкодав Лейля",         r:"Белебей",      speed_delivery:26.3,  speed_hall:20.0,  problem:10.1, productivity:7.6,  cx:73.3, clients:2.5},
+  {name:"Пальцева Кристина",      r:"Белебей",      speed_delivery:26.6,  speed_hall:20.3,  problem:10.3, productivity:7.5,  cx:72.6, clients:2.5},
+  {name:"Галлямов Ильнур",        r:"Белебей",      speed_delivery:26.9,  speed_hall:20.6,  problem:10.5, productivity:7.3,  cx:71.9, clients:2.4},
 ];
 
 // ============================================================
@@ -419,87 +384,101 @@ const MANAGERS = [
 const METRICS = {
   speed_delivery: {
     label:"Скорость на доставку", emoji:"🛵", unit:"мин",
-    lowerBetter:true, target:14, targetDir:"lte",
-    fmt:v=>v.toFixed(1),
-    valClass:v=> v<=14 ? "val-good" : v<=16 ? "val-ok" : "val-bad"
+    lowerBetter:true,
+    fmt: v => v.toFixed(1),
+    valClass: v => v <= 14 ? "val-good" : v <= 16 ? "val-ok" : "val-bad"
   },
   speed_hall: {
     label:"Скорость в зал", emoji:"🍽️", unit:"мин",
-    lowerBetter:true, target:10, targetDir:"lte",
-    fmt:v=>v.toFixed(1),
-    valClass:v=> v<=10 ? "val-good" : v<=12 ? "val-ok" : "val-bad"
+    lowerBetter:true,
+    fmt: v => v.toFixed(1),
+    valClass: v => v <= 10 ? "val-good" : v <= 12 ? "val-ok" : "val-bad"
   },
   problem: {
     label:"Проблемности", emoji:"😡", unit:"%",
-    lowerBetter:true, target:null,
-    fmt:v=>v.toFixed(1)+"%",
-    valClass:v=> v<=2 ? "val-good" : v<=5 ? "val-ok" : "val-bad"
+    lowerBetter:true,
+    fmt: v => v.toFixed(1) + "%",
+    valClass: v => v <= 2 ? "val-good" : v <= 5 ? "val-ok" : "val-bad"
   },
   productivity: {
     label:"Производительность", emoji:"🍕", unit:"прод/ч·ч",
-    lowerBetter:false, target:8.0, targetDir:"gte",
-    fmt:v=>v.toFixed(1),
-    valClass:v=> v>=8.0 ? "val-good" : v>=7.5 ? "val-ok" : "val-bad"
+    lowerBetter:false,
+    fmt: v => v.toFixed(1),
+    valClass: v => v >= 8.0 ? "val-good" : v >= 7.5 ? "val-ok" : "val-bad"
   },
   cx: {
     label:"РКО", emoji:"👥", unit:"баллов",
-    lowerBetter:false, target:95, targetDir:"gte",
-    fmt:v=>v.toFixed(1),
-    valClass:v=> v>=95 ? "val-good" : v>=90 ? "val-ok" : "val-bad"
+    lowerBetter:false,
+    fmt: v => v.toFixed(1),
+    valClass: v => v >= 95 ? "val-good" : v >= 90 ? "val-ok" : "val-bad"
   },
   clients: {
     label:"Рейтинг клиентов", emoji:"⭐", unit:"из 5",
-    lowerBetter:false, target:4.5, targetDir:"gte",
-    fmt:v=>v.toFixed(1),
-    valClass:v=> v>=4.5 ? "val-good" : v>=4.0 ? "val-ok" : "val-bad"
+    lowerBetter:false,
+    fmt: v => v.toFixed(2),
+    valClass: v => v >= 4.5 ? "val-good" : v >= 4.0 ? "val-ok" : "val-bad"
   },
 };
 
 // ============================================================
 // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 // ============================================================
-const COLORS=["#FF6B00","#1A73E8","#2E9E5B","#9B59B6","#E67E22","#16A085","#E74C3C","#2980B9","#8E44AD","#27AE60","#F39C12","#C0392B","#1ABC9C","#D35400","#3498DB","#E91E63","#00BCD4","#FF5722","#607D8B","#795548"];
+const COLORS = ["#FF6B00","#1A73E8","#2E9E5B","#9B59B6","#E67E22","#16A085","#E74C3C","#2980B9","#8E44AD","#27AE60","#F39C12","#C0392B","#1ABC9C","#D35400","#3498DB","#E91E63","#00BCD4","#FF5722","#607D8B","#795548"];
 function initials(n){const p=n.trim().split(' ');return p.length>=2?p[0][0]+p[1][0]:p[0].slice(0,2).toUpperCase()}
 function clr(i){return COLORS[i%COLORS.length]}
 function posLabel(n){return n===1?'🥇':n===2?'🥈':n===3?'🥉':String(n)}
 
-function rankBy(key,lowerBetter){
-  return [...MANAGERS].sort((a,b)=>lowerBetter?a[key]-b[key]:b[key]-a[key]).map((m,i)=>({...m,rank:i+1}));
+// Проверка: есть ли у менеджера данные по показателю
+function hasVal(m, key){ return m[key] !== null && m[key] !== undefined && !isNaN(m[key]); }
+
+// Ранжирование — менеджеры без данных уходят в конец со специальным флагом
+function rankBy(key, lowerBetter){
+  const withData    = MANAGERS.filter(m => hasVal(m, key));
+  const withoutData = MANAGERS.filter(m => !hasVal(m, key));
+  const sorted = [...withData].sort((a,b) => lowerBetter ? a[key]-b[key] : b[key]-a[key]);
+  const ranked = sorted.map((m,i) => ({...m, rank:i+1, hasData:true}));
+  const noRanked = withoutData.map(m => ({...m, rank:null, hasData:false}));
+  return [...ranked, ...noRanked];
 }
 
+// Общий балл — считается только по тем показателям, где есть данные
 function overallScore(m){
-  let s=0,keys=Object.keys(METRICS);
-  keys.forEach(k=>{
-    const r=rankBy(k,METRICS[k].lowerBetter);
-    const pos=r.findIndex(x=>x.name===m.name)+1;
-    const n=MANAGERS.length;
-    s+=Math.round((n-pos)/(n-1)*100);
+  let s = 0, count = 0;
+  Object.keys(METRICS).forEach(k => {
+    if (!hasVal(m, k)) return; // пропускаем показатели без данных
+    const withData = MANAGERS.filter(x => hasVal(x, k));
+    const sorted   = [...withData].sort((a,b) => METRICS[k].lowerBetter ? a[k]-b[k] : b[k]-a[k]);
+    const pos      = sorted.findIndex(x => x.name === m.name) + 1;
+    const n        = withData.length;
+    s += Math.round((n - pos) / (n - 1 || 1) * 100);
+    count++;
   });
-  return Math.round(s/keys.length);
+  return count > 0 ? Math.round(s / count) : 0;
 }
 
 // ============================================================
 // ГЛАВНАЯ СТРАНИЦА
 // ============================================================
 function buildMain(){
-  document.getElementById('weekBadge').textContent=WEEK_LABEL;
-  document.getElementById('kingWeekTitle').textContent='Король смены — '+WEEK_LABEL;
-  document.getElementById('kingName').textContent=KING.name;
-  document.getElementById('kingMeta').textContent=KING.meta;
-  document.getElementById('kingScore').textContent=KING.score;
-  document.getElementById('kingStats').innerHTML=KING.stats.map(s=>`<div class="king-stat">${s}</div>`).join('');
+  document.getElementById('weekBadge').textContent = WEEK_LABEL;
+  document.getElementById('kingWeekTitle').textContent = 'Король смены — ' + WEEK_LABEL;
+  document.getElementById('kingName').textContent = KING.name;
+  document.getElementById('kingMeta').textContent = KING.meta;
+  document.getElementById('kingScore').textContent = KING.score;
+  document.getElementById('kingStats').innerHTML = KING.stats.map(s=>`<div class="king-stat">${s}</div>`).join('');
 
-  // Лидеры по каждому показателю
-  const grid=document.getElementById('leadersGrid');
-  grid.innerHTML='';
-  Object.keys(METRICS).forEach(key=>{
-    const cfg=METRICS[key];
-    const ranked=rankBy(key,cfg.lowerBetter);
-    const top=ranked[0];
-    const idx=MANAGERS.findIndex(m=>m.name===top.name);
-    const card=document.createElement('div');
-    card.className='leader-card rank-1';
-    card.innerHTML=`
+  // Лидеры по каждому показателю (только среди тех, у кого есть данные)
+  const grid = document.getElementById('leadersGrid');
+  grid.innerHTML = '';
+  Object.keys(METRICS).forEach(key => {
+    const cfg    = METRICS[key];
+    const ranked = rankBy(key, cfg.lowerBetter);
+    const top    = ranked.find(m => m.hasData); // первый с данными
+    if (!top) return;
+    const idx  = MANAGERS.findIndex(m => m.name === top.name);
+    const card = document.createElement('div');
+    card.className = 'leader-card rank-1';
+    card.innerHTML = `
       <div class="rank-badge">1</div>
       <div class="leader-avatar" style="background:${clr(idx)}">${initials(top.name)}</div>
       <div class="leader-name">${top.name}</div>
@@ -510,10 +489,10 @@ function buildMain(){
   });
 
   // Итоговая таблица
-  const scored=MANAGERS.map(m=>({...m,overall:overallScore(m)})).sort((a,b)=>b.overall-a.overall);
-  const maxS=scored[0].overall;
-  document.getElementById('mainTable').innerHTML=scored.map((m,i)=>{
-    const idx=MANAGERS.findIndex(x=>x.name===m.name);
+  const scored = MANAGERS.map(m => ({...m, overall: overallScore(m)})).sort((a,b) => b.overall - a.overall);
+  const maxS   = scored[0].overall || 1;
+  document.getElementById('mainTable').innerHTML = scored.map((m,i) => {
+    const idx = MANAGERS.findIndex(x => x.name === m.name);
     return `<div class="lb-row${i<3?' top3':''}">
       <div class="lb-pos ${i===0?'p1':i===1?'p2':i===2?'p3':''}">${posLabel(i+1)}</div>
       <div class="lb-person">
@@ -530,24 +509,29 @@ function buildMain(){
 // СТРАНИЦА МЕТРИКИ
 // ============================================================
 function buildMetricPage(key){
-  const cfg=METRICS[key];
-  const ranked=rankBy(key,cfg.lowerBetter);
-  const vals=ranked.map(m=>m[key]);
-  const avg=vals.reduce((s,v)=>s+v,0)/vals.length;
+  const cfg    = METRICS[key];
+  const ranked = rankBy(key, cfg.lowerBetter);
 
-  document.getElementById(key+'Best').textContent=cfg.fmt(ranked[0][key]);
+  // Только с данными — для статистики
+  const withData = ranked.filter(m => m.hasData);
+  const vals     = withData.map(m => m[key]);
+  const avg      = vals.length ? vals.reduce((s,v)=>s+v,0)/vals.length : null;
+  const best     = withData[0];
+  const worst    = withData[withData.length-1];
+
+  document.getElementById(key+'Best').textContent = best ? cfg.fmt(best[key]) : '—';
 
   // Стат-карточки
-  document.getElementById(key+'Stats').innerHTML=[
-    {l:'Лучший',  v:cfg.fmt(ranked[0][key]),           u:cfg.unit},
-    {l:'Средний', v:cfg.fmt(avg),                       u:cfg.unit},
-    {l:'Худший',  v:cfg.fmt(ranked[ranked.length-1][key]),u:cfg.unit},
-    {l:'Участников',v:ranked.length,                    u:'менеджеров'},
-  ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val">${s.v}</div><div class="stat-unit">${s.u}</div></div>`).join('');
+  document.getElementById(key+'Stats').innerHTML = [
+    {l:'Лучший',     v: best  ? cfg.fmt(best[key])  : '—', u: cfg.unit},
+    {l:'Средний',    v: avg   ? cfg.fmt(avg)         : '—', u: cfg.unit},
+    {l:'Худший',     v: worst ? cfg.fmt(worst[key])  : '—', u: cfg.unit},
+    {l:'Участников', v: withData.length,                    u: 'менеджеров'},
+  ].map(s => `<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val">${s.v}</div><div class="stat-unit">${s.u}</div></div>`).join('');
 
-  // Подиум
-  document.getElementById(key+'Podium').innerHTML=ranked.slice(0,3).map((m,i)=>{
-    const idx=MANAGERS.findIndex(x=>x.name===m.name);
+  // Подиум (топ-3 среди тех, у кого есть данные)
+  document.getElementById(key+'Podium').innerHTML = withData.slice(0,3).map((m,i) => {
+    const idx = MANAGERS.findIndex(x => x.name === m.name);
     return `<div class="podium-card ${['p1','p2','p3'][i]}">
       <span class="podium-medal">${['🥇','🥈','🥉'][i]}</span>
       <div style="width:44px;height:44px;border-radius:50%;background:${clr(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
@@ -558,21 +542,43 @@ function buildMetricPage(key){
     </div>`;
   }).join('');
 
-  // Полная таблица
-  const best=ranked[0][key], worst=ranked[ranked.length-1][key];
-  document.getElementById(key+'Table').innerHTML=ranked.map((m,i)=>{
-    const idx=MANAGERS.findIndex(x=>x.name===m.name);
-    const pct=cfg.lowerBetter
-      ? Math.round((1-(m[key]-best)/(worst-best||1))*100)
-      : Math.round((m[key]-worst)/(best-worst||1)*100);
-    return `<div class="lb-row${i<3?' top3':''}">
-      <div class="lb-pos ${i===0?'p1':i===1?'p2':i===2?'p3':''}">${posLabel(i+1)}</div>
+  // Полная таблица — сначала с данными (ранжированные), потом без (прочерк)
+  const bestVal  = best  ? best[key]  : 1;
+  const worstVal = worst ? worst[key] : 0;
+
+  document.getElementById(key+'Table').innerHTML = ranked.map((m,i) => {
+    const idx   = MANAGERS.findIndex(x => x.name === m.name);
+    const isTop = m.hasData && i < 3;
+
+    if (!m.hasData) {
+      // Строка без данных — в конце, приглушённая, с прочерком
+      return `<div class="lb-row no-data">
+        <div class="lb-pos">—</div>
+        <div class="lb-person">
+          <div class="lb-avatar" style="background:${clr(idx)};opacity:0.5">${initials(m.name)}</div>
+          <div>
+            <div class="lb-pname">${m.name}</div>
+            <div class="lb-psub">${m.r}</div>
+          </div>
+        </div>
+        <div class="lb-val no-data-val">— <span>нет данных</span></div>
+        <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:0%"></div></div></div>
+      </div>`;
+    }
+
+    const pct = cfg.lowerBetter
+      ? Math.round((1 - (m[key] - bestVal) / ((worstVal - bestVal) || 1)) * 100)
+      : Math.round((m[key] - worstVal) / ((bestVal - worstVal) || 1) * 100);
+
+    const posClass = i===0?'p1':i===1?'p2':i===2?'p3':'';
+    return `<div class="lb-row${isTop?' top3':''}">
+      <div class="lb-pos ${posClass}">${posLabel(i+1)}</div>
       <div class="lb-person">
         <div class="lb-avatar" style="background:${clr(idx)}">${initials(m.name)}</div>
         <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.r}</div></div>
       </div>
       <div class="lb-val ${cfg.valClass(m[key])}">${cfg.fmt(m[key])} <span>${cfg.unit}</span></div>
-      <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${pct}%"></div></div></div>
+      <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${Math.max(0,Math.min(100,pct))}%"></div></div></div>
     </div>`;
   }).join('');
 }
@@ -580,15 +586,15 @@ function buildMetricPage(key){
 // ============================================================
 // НАВИГАЦИЯ
 // ============================================================
-document.querySelectorAll('.nav-item').forEach(item=>{
-  item.addEventListener('click',e=>{
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', e => {
     e.preventDefault();
-    const pg=item.dataset.page;
-    document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const pg = item.dataset.page;
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     item.classList.add('active');
-    document.getElementById('page-'+pg).classList.add('active');
-    window.scrollTo(0,0);
+    document.getElementById('page-' + pg).classList.add('active');
+    window.scrollTo(0, 0);
   });
 });
 
@@ -596,7 +602,7 @@ document.querySelectorAll('.nav-item').forEach(item=>{
 // ИНИЦИАЛИЗАЦИЯ
 // ============================================================
 buildMain();
-Object.keys(METRICS).forEach(key=>buildMetricPage(key));
+Object.keys(METRICS).forEach(key => buildMetricPage(key));
 </script>
 </body>
 </html>
