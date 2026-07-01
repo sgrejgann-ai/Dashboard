@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[01.07.2026 10:50] Arthur: <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -55,7 +55,8 @@
   .leaders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:28px}
   .leader-card{background:var(--card);border-radius:14px;padding:18px 16px;border:1.5px solid var(--border);position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
   .leader-card:hover{transform:translateY(-2px);border-color:var(--orange)}
-  .leader-card.rank-1{border-color:var(--rank1);background:linear-gradient(135deg,#fff 0%,var(--orange-light) 100%)}
+  .leader-card.
+[01.07.2026 10:50] Arthur: rank-1{border-color:var(--rank1);background:linear-gradient(135deg,#fff 0%,var(--orange-light) 100%)}
   .rank-badge{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;background:var(--rank1)}
   .leader-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
   .leader-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px;padding-right:30px;line-height:1.3}
@@ -105,7 +106,8 @@
   .stat-unit{font-size:12px;color:var(--text3);font-weight:500;margin-top:4px}
 
   /* Подиум: обёртка для группы ничьих */
-  .podium{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+  .
+[01.07.2026 10:50] Arthur: podium{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
   .podium-row{display:flex;gap:12px}
   .podium-card{background:var(--card);border-radius:16px;border:1.5px solid var(--border);padding:20px 16px;text-align:center;flex:1;min-width:0}
   .podium-card.p1{border-color:var(--orange)}.podium-card.p2{border-color:#C0C0C0}.podium-card.p3{border-color:var(--rank3)}
@@ -135,6 +137,19 @@
     .podium-card{
       flex:0 0 140px; /* фиксированная ширина карточки */
       scroll-snap-align:start;
+    }
+    /* Когда карточек мало (1-2) — не скроллим, а центрируем по экрану */
+    .podium-row.podium-row-compact{
+      overflow-x:visible;
+      justify-content:center;
+      margin-left:0;
+      margin-right:0;
+      padding-left:0;
+      padding-right:0;
+    }
+    .podium-row.podium-row-compact .podium-card{
+      flex:0 0 auto;
+      width:160px;
     }
   }
 
@@ -171,7 +186,8 @@
   <a class="nav-item" data-page="speed_delivery" href="#">🛵 Скорость на доставку</a>
   <a class="nav-item" data-page="speed_hall" href="#">🍽️ Скорость в зал</a>
   <a class="nav-item" data-page="problem" href="#">😡 Тикеты</a>
-  <a class="nav-item" data-page="productivity" href="#">🍕 Производительность</a>
+  <a class="nav-item" data-page="productivity_low" href="#">🍕 Производительность &lt;8</a>
+  <a class="nav-item" data-page="productivity_high" href="#">🍕 Производительность &gt;8</a>
   <a class="nav-item" data-page="cx" href="#">👥 РКО</a>
   <a class="nav-item" data-page="clients" href="#">⭐ Рейтинг клиентов</a>
 </nav>
@@ -194,9 +210,9 @@
       </div>
     </div>
   </div>
-  <div class="section-title">Лидеры недели по показателям</div>
-  <div class="leaders-grid" id="leadersGrid"></div>
-  <div class="section-title">Полная таблица — общий рейтинг</div>
+  <div class="section-title">Пьедестал — 2 и 3 место общего зачёта</div>
+  <div id="mainPodium23"></div>
+[01.07.2026 10:50] Arthur: <div class="section-title">Полная таблица — общий рейтинг</div>
   <div class="lb-wrap">
     <div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Балл</div><div></div></div>
     <div id="mainTable"></div>
@@ -263,24 +279,44 @@
   <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="problemTable"></div></div>
 </div>
 
-<!-- PRODUCTIVITY -->
-<div class="page" id="page-productivity">
+<!-- PRODUCTIVITY < 8 -->
+<div class="page" id="page-productivity_low">
   <div class="metric-header">
     <div class="metric-icon" style="background:#E8F0FE">🍕</div>
     <div>
-      <div class="metric-title">Производительность на смене</div>
-      <div class="metric-desc">Продуктов на человека в час · Больше = лучше</div>
+      <div class="metric-title">Производительность &lt;8</div>
+      <div class="metric-desc">Продуктов на человека в час · Больше = лучше · Все рестораны, кроме 12-1, Пушкин, Мелеуз и 12-5</div>
     </div>
     <div class="metric-week">
       <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
-      <div class="metric-week-val" id="productivityBest">—</div>
+      <div class="metric-week-val" id="productivity_lowBest">—</div>
     </div>
   </div>
-  <div class="stats-row" id="productivityStats"></div>
+  <div class="stats-row" id="productivity_lowStats"></div>
   <div class="section-title">Топ-3 недели</div>
-  <div id="productivityPodium"></div>
+  <div id="productivity_lowPodium"></div>
   <div class="section-title">Все места</div>
-  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="productivityTable"></div></div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="productivity_lowTable"></div></div>
+</div>
+
+<!-- PRODUCTIVITY > 8 -->
+<div class="page" id="page-productivity_high">
+  <div class="metric-header">
+    <div class="metric-icon" style="background:#E8F0FE">🍕</div>
+    <div>
+      <div class="metric-title">Производительность &gt;8</div>
+[01.07.2026 10:50] Arthur: <div class="metric-desc">Продуктов на человека в час · Больше = лучше · Рестораны 12-1, Пушкин, Мелеуз и 12-5</div>
+    </div>
+    <div class="metric-week">
+      <div class="metric-week-label">ЛУЧШИЙ РЕЗУЛЬТАТ</div>
+      <div class="metric-week-val" id="productivity_highBest">—</div>
+    </div>
+  </div>
+  <div class="stats-row" id="productivity_highStats"></div>
+  <div class="section-title">Топ-3 недели</div>
+  <div id="productivity_highPodium"></div>
+  <div class="section-title">Все места</div>
+  <div class="lb-wrap"><div class="lb-header"><div>#</div><div>Менеджер</div><div style="text-align:right">Результат</div><div></div></div><div id="productivity_highTable"></div></div>
 </div>
 
 <!-- CX -->
@@ -344,7 +380,7 @@ const MANAGERS = [
   {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:14.36, speed_hall:9.56,  problem:4, productivity:7.5,  cx:84,   clients:4.7},
   {name:"Финченко Артём",         r:"12-2",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Строк Ксения",           r:"12-2",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Корепина Наталия",       r:"12-2",         speed_delivery:14.36, speed_hall:9.56,  problem:3, productivity:7.9,  cx:84,   clients:4.73},
+[01.07.2026 10:50] Arthur: {name:"Корепина Наталия",       r:"12-2",         speed_delivery:14.36, speed_hall:9.56,  problem:3, productivity:7.9,  cx:84,   clients:4.73},
   {name:"Андрусов Олег",          r:"12-2",         speed_delivery:14.36, speed_hall:9.56,  problem:1, productivity:7.6,  cx:84,   clients:4.69},
   {name:"Лыткина Татьяна",        r:"12-3",         speed_delivery:15.05, speed_hall:9.56,  problem:0, productivity:7.7,  cx:98,   clients:4.86},
   {name:"Гришанова Диана",        r:"12-3",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
@@ -371,7 +407,7 @@ const MANAGERS = [
   {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:16.27, speed_hall:12.27, problem:7, productivity:8.1,  cx:92,   clients:4.84},
   {name:"Максютов Данила",        r:"Пушкин",       speed_delivery:16.27, speed_hall:12.27, problem:8, productivity:7.4,  cx:92,   clients:4.70},
   {name:"Бекенев Александр",      r:"Пушкин",       speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
+[01.07.2026 10:50] Arthur: {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:16.55,  speed_hall:12.30,  problem:1, productivity:5.9, cx:94, clients:4.93},
   {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Вельможин Владислав",    r:"Кумертау",     speed_delivery:16.55,  speed_hall:12.30,  problem:5, productivity:6.3, cx:94, clients:4.82},
@@ -427,12 +463,17 @@ const METRICS = {
   },
 };
 
+// Рестораны с "усиленной" нормой производительности (>8) — по запросу.
+// П-1 = Пушкин.
+const HIGH_PROD_RESTAURANTS = ["12-1", "Пушкин", "Мелеуз", "12-5"];
+
 // ============================================================
 // ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 // ============================================================
 const COLORS = ["#FF6B00","#1A73E8","#2E9E5B","#9B59B6","#E67E22","#16A085","#E74C3C","#2980B9","#8E44AD","#27AE60","#F39C12","#C0392B","#1ABC9C","#D35400","#3498DB","#E91E63","#00BCD4","#FF5722","#607D8B","#795548"];
 function initials(n){const p=n.trim().split(' ');return p.length>=2?p[0][0]+p[1][0]:p[0].slice(0,2).toUpperCase()}
-function clr(i){return COLORS[i%COLORS.length]}
+function clr(i){return COLORS[i%COLORS.
+[01.07.2026 10:50] Arthur: length]}
 
 // Медали только для 3 групп-мест (1-е, 2-е, 3-е место по группам)
 const MEDALS  = ['🥇','🥈','🥉'];
@@ -441,16 +482,16 @@ const P_CLASS = ['p1','p2','p3'];
 function hasVal(m, key){ return m[key] !== null && m[key] !== undefined && !isNaN(m[key]); }
 
 // ============================================================
-// rankBy — возвращает менеджеров с полями:
+// rankBy — возвращает менеджеров (из managersList) с полями:
 //   groupRank  — номер группы (1, 2, 3, …) — одинаковое значение → одна группа
 //   tieCount   — сколько человек в группе
 //   hasData    — есть ли данные
 //   avgOrdinal — среднее арифметическое порядковых позиций внутри группы
 //                используется для честного подсчёта overallScore при ничьях
 // ============================================================
-function rankBy(key, lowerBetter) {
-  const withData    = MANAGERS.filter(m => hasVal(m, key));
-  const withoutData = MANAGERS.filter(m => !hasVal(m, key));
+function rankBy(key, lowerBetter, managersList = MANAGERS) {
+  const withData    = managersList.filter(m => hasVal(m, key));
+  const withoutData = managersList.filter(m => !hasVal(m, key));
 
   const sorted = [...withData].sort((a, b) =>
     lowerBetter ? a[key] - b[key] : b[key] - a[key]
@@ -486,6 +527,8 @@ function rankBy(key, lowerBetter) {
 
 // ============================================================
 // overallScore — при ничьях все в группе получают одинаковый балл
+// (считается по всем менеджерам сети, вне зависимости от разбивки
+//  вкладки "Производительность")
 // ============================================================
 function overallScore(m) {
   let s = 0, count = 0;
@@ -514,32 +557,6 @@ function buildMain() {
   document.getElementById('kingScore').textContent = KING.score;
   document.getElementById('kingStats').innerHTML = KING.stats.map(s => `<div class="king-stat">${s}</div>`).join('');
 
-  // Лидеры по каждому показателю
-  const grid = document.getElementById('leadersGrid');
-  grid.innerHTML = '';
-  Object.keys(METRICS).forEach(key => {
-    const cfg    = METRICS[key];
-    const ranked = rankBy(key, cfg.lowerBetter);
-    const top    = ranked.find(m => m.hasData);
-    if (!top) return;
-    const idx  = MANAGERS.findIndex(m => m.name === top.name);
-    const card = document.createElement('div');
-    card.className = 'leader-card rank-1';
-    // Если ничья — показываем "и ещё N"
-    const tieNote = top.tieCount > 1
-      ? `<div class="leader-tied">🤝 и ещё ${top.tieCount - 1} с таким же результатом</div>`
-      : '';
-    card.innerHTML = `
-      <div class="rank-badge">1</div>
-      <div class="leader-avatar" style="background:${clr(idx)}">${initials(top.name)}</div>
-      <div class="leader-name">${top.name}</div>
-      <div class="leader-metric-label">${cfg.emoji} ${cfg.label}</div>
-      <div class="leader-metric-val ${cfg.valClass(top[key])}">${cfg.fmt(top[key])}<span class="leader-unit">${cfg.unit}</span></div>
-      ${tieNote}
-    `;
-    grid.appendChild(card);
-  });
-
   // Итоговая таблица с честными ничьими
   const scored = MANAGERS
     .map(m => ({ ...m, overall: overallScore(m) }))
@@ -552,17 +569,20 @@ function buildMain() {
     m._group = curGroup;
   });
 
+  // Пьедестал 2 и 3 место — берётся автоматически из общего зачёта
+  buildMainPodium(scored);
+
   const maxS = scored[0].overall || 1;
 
   document.getElementById('mainTable').innerHTML = scored.map(m => {
     const idx      = MANAGERS.findIndex(x => x.name === m.name);
     const g        = m._group;
     const rowClass = g === 1 ? ' top1' : g === 2 ? ' top2' : g === 3 ? ' top3' : '';
-    const medal    = g <= 3 ? MEDALS[g - 1] : String(g);
+[01.07.2026 10:50] Arthur: const medal    = g <= 3 ? MEDALS[g - 1] : String(g);
     const pc       = g <= 3 ? P_CLASS[g - 1] : '';
     // Количество людей с тем же баллом
     const tieCount = scored.filter(x => x.overall === m.overall).length;
-    const tieHint  = tieCount > 1 ? `<span class="lb-pos-tied">× ${tieCount}</span>` : '';
+    const tieHint  = tieCount > 1 ? <span class="lb-pos-tied">× ${tieCount}</span> : '';
 
     return `<div class="lb-row${rowClass}">
       <div class="lb-pos ${pc}">${medal}${tieHint}</div>
@@ -577,11 +597,56 @@ function buildMain() {
 }
 
 // ============================================================
-// ПОДИУМ — группирует ничьих в одну строку с одной медалью
-// Показывает первые 3 группы (место 1, место 2, место 3)
+// ПЬЕДЕСТАЛ ГЛАВНОЙ СТРАНИЦЫ — 2 и 3 место общего зачёта
+// 1 место уже отображено в плашке "Король смены"
 // ============================================================
-function buildPodium(key, cfg, withData) {
-  const el = document.getElementById(key + 'Podium');
+function buildMainPodium(scored) {
+  const el = document.getElementById('mainPodium23');
+  el.className = 'podium';
+  el.innerHTML = '';
+
+  const ICONS   = { 2: '🏆', 3: '🏅' };
+  const LABELS  = { 2: '2 место общего зачёта', 3: '3 место общего зачёта' };
+
+  [2, 3].forEach(groupNum => {
+    const members = scored.filter(m => m._group === groupNum);
+    if (!members.length) return;
+
+    const label = document.createElement('div');
+    label.className = 'podium-row-label';
+    label.textContent = LABELS[groupNum] + (members.length > 1 ?  · ${members.length} чел. : '');
+    el.appendChild(label);
+
+    const row = document.createElement('div');
+    row.className = 'podium-row' + (members.length <= 2 ? ' podium-row-compact' : '');
+
+    members.forEach(m => {
+      const idx  = MANAGERS.findIndex(x => x.name === m.name);
+      const card = document.createElement('div');
+      card.className = podium-card ${P_CLASS[groupNum - 1]};
+      card.innerHTML = `
+        <span class="podium-medal">${ICONS[groupNum]}</span>
+        <div style="width:44px;height:44px;border-radius:50%;background:${clr(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
+        <div class="podium-name">${m.name}</div>
+        <div style="font-size:11px;color:#888;margin-bottom:4px">${m.r}</div>
+        <div class="podium-val">${m.overall}</div>
+        <div class="podium-rank-label">баллов</div>
+      `;
+      row.appendChild(card);
+    });
+
+    el.appendChild(row);
+  });
+}
+
+// ============================================================
+// ПОДИУМ МЕТРИКИ — группирует ничьих в одну строку с одной медалью
+// Показывает первые 3 группы (место 1, место 2, место 3)
+// idPrefix — префикс id элемента в DOM (может отличаться от ключа
+// метрики, например для разделённых вкладок productivity_low/_high)
+// ============================================================
+function buildPodium(idPrefix, key, cfg, withData) {
+  const el = document.getElementById(idPrefix + 'Podium');
   el.className = 'podium';
   el.innerHTML = '';
 
@@ -605,19 +670,20 @@ function buildPodium(key, cfg, withData) {
       const label = document.createElement('div');
       label.className = 'podium-row-label';
       const scrollHint = members.length > 3
-        ? `<span style="font-style:italic;font-weight:400"> · листайте →</span>`
+        ? <span style="font-style:italic;font-weight:400"> · листайте →</span>
         : '';
-      label.innerHTML = `Место ${gi + 1} · ${members.length} чел.${scrollHint}`;
+      label.innerHTML = Место ${gi + 1} · ${members.
+[01.07.2026 10:50] Arthur: length} чел.${scrollHint};
       el.appendChild(label);
     }
 
     const row = document.createElement('div');
-    row.className = 'podium-row';
+    row.className = 'podium-row' + (members.length <= 2 ? ' podium-row-compact' : '');
 
     members.forEach(m => {
       const idx  = MANAGERS.findIndex(x => x.name === m.name);
       const card = document.createElement('div');
-      card.className = `podium-card ${pClass}`;
+      card.className = podium-card ${pClass};
       card.innerHTML = `
         <span class="podium-medal">${medal}</span>
         <div style="width:44px;height:44px;border-radius:50%;background:${clr(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
@@ -635,19 +701,22 @@ function buildPodium(key, cfg, withData) {
 
 // ============================================================
 // СТРАНИЦА МЕТРИКИ
+// managersList — подмножество менеджеров для этой страницы (по
+// умолчанию — все); idPrefix — префикс id элементов в DOM (по
+// умолчанию совпадает с ключом метрики)
 // ============================================================
-function buildMetricPage(key) {
+function buildMetricPage(key, managersList = MANAGERS, idPrefix = key) {
   const cfg      = METRICS[key];
-  const ranked   = rankBy(key, cfg.lowerBetter);
+  const ranked   = rankBy(key, cfg.lowerBetter, managersList);
   const withData = ranked.filter(m => m.hasData);
   const vals     = withData.map(m => m[key]);
   const avg      = vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : null;
   const best     = withData[0];
   const worst    = withData[withData.length - 1];
 
-  document.getElementById(key + 'Best').textContent = best ? cfg.fmt(best[key]) : '—';
+  document.getElementById(idPrefix + 'Best').textContent = best ? cfg.fmt(best[key]) : '—';
 
-  document.getElementById(key + 'Stats').innerHTML = [
+  document.getElementById(idPrefix + 'Stats').innerHTML = [
     { l: 'Лучший',     v: best  ? cfg.fmt(best[key]) : '—', u: cfg.unit },
     { l: 'Средний',    v: avg   ? cfg.fmt(avg)        : '—', u: cfg.unit },
     { l: 'Худший',     v: worst ? cfg.fmt(worst[key]) : '—', u: cfg.unit },
@@ -655,13 +724,13 @@ function buildMetricPage(key) {
   ].map(s => `<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val">${s.v}</div><div class="stat-unit">${s.u}</div></div>`).join('');
 
   // Подиум с ничьими
-  buildPodium(key, cfg, withData);
+  buildPodium(idPrefix, key, cfg, withData);
 
   // Полная таблица
   const bestVal  = best  ? best[key]  : 1;
   const worstVal = worst ? worst[key] : 0;
 
-  document.getElementById(key + 'Table').innerHTML = ranked.map(m => {
+  document.getElementById(idPrefix + 'Table').innerHTML = ranked.map(m => {
     const idx = MANAGERS.findIndex(x => x.name === m.name);
 
     if (!m.hasData) {
@@ -680,7 +749,7 @@ function buildMetricPage(key) {
     const rowClass = g === 1 ? ' top1' : g === 2 ? ' top2' : g === 3 ? ' top3' : '';
     const medal    = g <= 3 ? MEDALS[g - 1] : String(g);
     const pc       = g <= 3 ? P_CLASS[g - 1] : '';
-    const tieHint  = m.tieCount > 1 ? `<span class="lb-pos-tied">× ${m.tieCount}</span>` : '';
+    const tieHint  = m.tieCount > 1 ? <span class="lb-pos-tied">× ${m.tieCount}</span> : '';
 
     const pct = cfg.lowerBetter
       ? Math.round((1 - (m[key] - bestVal) / ((worstVal - bestVal) || 1)) * 100)
@@ -691,7 +760,7 @@ function buildMetricPage(key) {
       <div class="lb-person">
         <div class="lb-avatar" style="background:${clr(idx)}">${initials(m.name)}</div>
         <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.r}</div></div>
-      </div>
+[01.07.2026 10:50] Arthur: </div>
       <div class="lb-val ${cfg.valClass(m[key])}">${cfg.fmt(m[key])} <span>${cfg.unit}</span></div>
       <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${Math.max(0, Math.min(100, pct))}%"></div></div></div>
     </div>`;
@@ -716,8 +785,18 @@ document.querySelectorAll('.nav-item').forEach(item => {
 // ============================================================
 // ИНИЦИАЛИЗАЦИЯ
 // ============================================================
+const highProdManagers = MANAGERS.filter(m => HIGH_PROD_RESTAURANTS.includes(m.r));
+const lowProdManagers  = MANAGERS.filter(m => !HIGH_PROD_RESTAURANTS.includes(m.r));
+
 buildMain();
-Object.keys(METRICS).forEach(key => buildMetricPage(key));
+Object.keys(METRICS).forEach(key => {
+  if (key === 'productivity') {
+    buildMetricPage('productivity', highProdManagers, 'productivity_high');
+    buildMetricPage('productivity', lowProdManagers, 'productivity_low');
+  } else {
+    buildMetricPage(key);
+  }
+});
 </script>
 </body>
 </html>
