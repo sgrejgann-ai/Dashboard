@@ -599,8 +599,8 @@ function overallScore(m) {
   });
 
   return totalWeight
-    ? Math.round(totalScore / totalWeight)
-    : 0;
+  ? totalScore / totalWeight
+  : 0;
 }
 
 // ============================================================
@@ -647,7 +647,7 @@ function buildMain() {
         <div class="lb-avatar" style="background:${clr(idx)}">${initials(m.name)}</div>
         <div><div class="lb-pname">${m.name}</div><div class="lb-psub">${m.r}</div></div>
       </div>
-      <div class="lb-val">${m.overall} <span>баллов</span></div>
+      <div class="lb-val">${m.overall.toFixed(1)} <span>баллов</span></div>
       <div class="lb-bar-wrap"><div class="lb-bar"><div class="lb-bar-fill" style="width:${Math.round(m.overall / maxS * 100)}%"></div></div></div>
     </div>`;
   }).join('');
@@ -700,7 +700,7 @@ function buildMainPodium(scored) {
         <div style="width:44px;height:44px;border-radius:50%;background:${clr(idx)};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#fff;margin:0 auto 8px">${initials(m.name)}</div>
         <div class="podium-name">${m.name}</div>
         <div style="font-size:11px;color:#888;margin-bottom:4px">${m.r}</div>
-        <div class="podium-val">${m.overall}</div>
+        <div class="podium-val">${m.overall.toFixed(1)}</div>
         <div class="podium-rank-label">баллов</div>
       `;
       row.appendChild(card);
