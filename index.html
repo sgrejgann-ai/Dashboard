@@ -469,7 +469,18 @@ const METRICS = {
     valClass: v => v >= 4.5 ? "val-good" : v >= 4.0 ? "val-ok" : "val-bad"
   },
 };
+// ============================================================
+// ВЕСА ПОКАЗАТЕЛЕЙ В ОБЩЕМ ЗАЧЁТЕ
+// ============================================================
 
+const METRIC_WEIGHTS = {
+  speed_delivery: 1,
+  speed_hall: 1,
+  problem: 2,         // Тикеты
+  productivity: 2,    // Производительность
+  cx: 1,              // РКО
+  clients: 2          // Рейтинг клиентов
+};
 // Рестораны с "усиленной" нормой производительности (>8) — по запросу.
 // П-1 = Пушкин.
 const HIGH_PROD_RESTAURANTS = ["12-1", "Пушкин", "Мелеуз", "12-5"];
@@ -537,19 +548,59 @@ function rankBy(key, lowerBetter, managersList = MANAGERS) {
 //  вкладки "Производительность")
 // ============================================================
 function overallScore(m) {
-  let s = 0, count = 0;
+
+  let totalScore = 0;
+  let totalWeight = 0;
+
   Object.keys(METRICS).forEach(k => {
+
     if (!hasVal(m, k)) return;
-    const ranked = rankBy(k, METRICS[k].lowerBetter);
-    const entry  = ranked.find(x => x.name === m.name);
+
+    let ranked;
+
+    // Производительность считаем отдельно
+    if (k === "productivity") {
+
+      const managersForRanking =
+        HIGH_PROD_RESTAURANTS.includes(m.r)
+          ? highProdManagers
+          : lowProdManagers;
+
+      ranked = rankBy(
+        k,
+        METRICS[k].lowerBetter,
+        managersForRanking
+      );
+
+    } else {
+
+      ranked = rankBy(
+        k,
+        METRICS[k].lowerBetter
+      );
+
+    }
+
+    const entry = ranked.find(x => x.name === m.name);
+
     if (!entry) return;
+
     const n = ranked.filter(x => x.hasData).length;
-    // Нормализуем avgOrdinal: 1-я позиция → 100, последняя → 0
-    const score = Math.round((n - entry.avgOrdinal) / (n - 1 || 1) * 100);
-    s += Math.max(0, score);
-    count++;
+
+    const score = Math.round(
+      (n - entry.avgOrdinal) / (n - 1 || 1) * 100
+    );
+
+    const weight = METRIC_WEIGHTS[k];
+
+    totalScore += Math.max(0, score) * weight;
+    totalWeight += weight;
+
   });
-  return count > 0 ? Math.round(s / count) : 0;
+
+  return totalWeight
+    ? Math.round(totalScore / totalWeight)
+    : 0;
 }
 
 // ============================================================
