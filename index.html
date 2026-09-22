@@ -367,56 +367,56 @@
 </div>
 
 <script>
-const WEEK_LABEL = "Неделя 07/09–13/09 · 2026";
+const WEEK_LABEL = "Неделя 14/09–20/09 · 2026";
 
 const KING = {
-  name:  "Корниенко Даниил",
-  meta:  "2-я неделя в топе",
+  name:  "Добрянская Анастасия",
+  meta:  "1-я неделя в топе",
   score: 77.9,
-  stats: ["😡 Тикеты 1#", "🛵 Скорость на доставку 2#", "🍽️ Скорость в зал 1#"]
+  stats: ["😡 Тикеты 1#"]
 };
 
 const MANAGERS = [
-  {name:"Брызгалов Артём",        r:"12-1",         speed_delivery:13,25,   speed_hall:9.46,  problem:3, productivity:10.3, cx:93.25, clients:4.85},
+  {name:"Брызгалов Артём",        r:"12-1",         speed_delivery:13.25,   speed_hall:9.46,  problem:3, productivity:10.3, cx:93.25, clients:4.85},
   {name:"Гутор Валерия",          r:"12-1",         speed_delivery:null,   speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Усова Алина",            r:"12-1",         speed_delivery:13.25,   speed_hall:9.46,  problem:6, productivity:9.9, cx:93.25, clients:4.89},
   {name:"Степанова Александра",   r:"12-1",         speed_delivery:13.25,   speed_hall:9.46,  problem:2, productivity:9.3, cx:93.25, clients:4.86},
   {name:"Селюкова Екатерина",     r:"12-1",         speed_delivery:null,   speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Козлова Людмила",        r:"12-1",         speed_delivery:null,   speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:16.31,  speed_hall:11.51,  problem:5, productivity:8.5, cx:89.67, clients:4.95},
+  {name:"Бахромкин Константин",   r:"12-2",         speed_delivery:16.31,  speed_hall:11.51,  problem:5, productivity:8.5, cx:89.75, clients:4.95},
   {name:"Финченко Артём",         r:"12-2",         speed_delivery:null,   speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Строк Ксения",           r:"12-2",         speed_delivery:16.31,   speed_hall:11.51,  problem:4, productivity:10.4, cx:89.67, clients:4.86},
+  {name:"Строк Ксения",           r:"12-2",         speed_delivery:16.31,   speed_hall:11.51,  problem:4, productivity:10.4, cx:89.75, clients:4.86},
   {name:"Корепина Наталия",       r:"12-2",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Андрусов Олег",          r:"12-2",         speed_delivery:16.31,   speed_hall:11.51,  problem:1, productivity:8.9, cx:89.67, clients:4.75},
+  {name:"Андрусов Олег",          r:"12-2",         speed_delivery:16.31,   speed_hall:11.51,  problem:1, productivity:8.9, cx:89.75, clients:4.75},
   {name:"Лыткина Татьяна",        r:"12-3",         speed_delivery:14.34, speed_hall:9.24,    problem:2, productivity:7.7,  cx:98,   clients:4.91},
   {name:"Гришанова Диана",        r:"12-3",         speed_delivery:14.34,   speed_hall:9.24,  problem:4, productivity:7.5, cx:98, clients:4.92},
   {name:"Гаврилица Олег",         r:"12-3",         speed_delivery:14.34,   speed_hall:9.24,  problem:2, productivity:6.8, cx:98, clients:4.95},
   {name:"Дубчак Максим",          r:"12-3",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Соловьёва Екатерина",    r:"12-3",         speed_delivery:14.34,   speed_hall:9.24,  problem:2, productivity:7.2, cx:98, clients:4.84},
   {name:"Ядловский Кирилл",       r:"12-5",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Кирюшова Наталия",       r:"12-5",         speed_delivery:14.15,  speed_hall:10.02,  problem:5, productivity:8.9, cx:98.67, clients:4.79},
-  {name:"Куприянов Константин",   r:"12-5",         speed_delivery:14.15,  speed_hall:10.02,  problem:3, productivity:7.9, cx:98.67, clients:4.92},
+  {name:"Кирюшова Наталия",       r:"12-5",         speed_delivery:14.15,  speed_hall:10.02,  problem:5, productivity:8.9, cx:98.25, clients:4.79},
+  {name:"Куприянов Константин",   r:"12-5",         speed_delivery:14.15,  speed_hall:10.02,  problem:3, productivity:7.9, cx:98.25, clients:4.92},
   {name:"Леликова Мария",         r:"12-5",         speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Кузнецов Фёдор",        r:"12-6",        speed_delivery:14.41,  speed_hall:10.00,  problem:0, productivity:7.1, cx:94.25, clients:4.98},
   {name:"Корниенко Даниил",       r:"12-6",         speed_delivery:14.41,  speed_hall:10.00,  problem:2, productivity:8.9, cx:94.25, clients:4.85},
   {name:"Тошова Амина",           r:"12-6",         speed_delivery:14.41,  speed_hall:10.00,  problem:5, productivity:7.8, cx:94.25, clients:4.67},
   {name:"Приходько Олег",         r:"12-6",         speed_delivery:14.41, speed_hall:10.00,  problem:1, productivity:8.4,  cx:94.25,   clients:4.75},
   {name:"Небесная Анастасия",     r:"Металлострой", speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Добрянская Анастасия",   r:"Металлострой", speed_delivery:14.27,  speed_hall:10.09,  problem:0, productivity:8.4, cx:95.33, clients:4.91},
+  {name:"Добрянская Анастасия",   r:"Металлострой", speed_delivery:14.27,  speed_hall:10.09,  problem:0, productivity:8.4, cx:94.25, clients:4.91},
   {name:"Тарасов Алексей",        r:"Металлострой", speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Кисляк Виктория",        r:"Металлострой", speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Сафронова Ольга",        r:"Металлострой", speed_delivery:14.27, speed_hall:10.09,  problem:3, productivity:7.8,  cx:95.33,  clients:4.93},
+  {name:"Сафронова Ольга",        r:"Металлострой", speed_delivery:14.27, speed_hall:10.09,  problem:3, productivity:7.8,  cx:94.25,  clients:4.93},
   {name:"Кузахметова Кристина",   r:"Пушкин",       speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
   {name:"Парфёнова Дарья",        r:"Пушкин",       speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
-  {name:"Попова Полина",          r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51, problem:4, productivity:12.1,  cx:79.5,   clients:4.88},
-  {name:"Руф Виктория",           r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51, problem:6, productivity:9.2,  cx:79.5,   clients:4.67},
-  {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51,  problem:4, productivity:10.9,  cx:79.5,  clients:4.78},
+  {name:"Попова Полина",          r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51, problem:4, productivity:12.1,  cx:77.5,   clients:4.88},
+  {name:"Руф Виктория",           r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51, problem:6, productivity:9.2,  cx:77.5,   clients:4.67},
+  {name:"Хомячук Александра",     r:"Пушкин",       speed_delivery:19.32, speed_hall:13.51,  problem:4, productivity:10.9,  cx:77.5,  clients:4.78},
   {name:"Максютов Данила",        r:"Пушкин",       speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
-  {name:"Симонов Олег",           r:"Кумертау",     speed_delivery:18.04, speed_hall:12.52,  problem:3, productivity:6.6, cx:90, clients:4.79},
+  {name:"Симонов Олег",           r:"Кумертау",     speed_delivery:18.04, speed_hall:12.52,  problem:3, productivity:6.6, cx:87, clients:4.79},
   {name:"Иполитова Полина",       r:"Кумертау",     speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
   {name:"Мустафина Эвелина",      r:"Кумертау",     speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
-  {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:18.04,  speed_hall:12.52,  problem:1, productivity:5.5, cx:90, clients:4.95},
-  {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:18.04,  speed_hall:12.52,  problem:4, productivity:7.6, cx:90, clients:4.84},
+  {name:"Макеева Мария",          r:"Кумертау",     speed_delivery:18.04,  speed_hall:12.52,  problem:1, productivity:5.5, cx:87, clients:4.95},
+  {name:"Фролов Вадим",           r:"Кумертау",     speed_delivery:18.04,  speed_hall:12.52,  problem:4, productivity:7.6, cx:87, clients:4.84},
   {name:"Вельможин Владислав",    r:"Кумертау",     speed_delivery:null,  speed_hall:null,  problem:null, productivity:null, cx:null, clients:null},
   {name:"Буранбаева Екатерина",   r:"Мелеуз",       speed_delivery:15.37,  speed_hall:11.44,  problem:4, productivity:7.8, cx:94.5, clients:4.90},
   {name:"Абдрахимова Римма",      r:"Мелеуз",       speed_delivery:15.37,  speed_hall:11.44,  problem:7, productivity:8.8, cx:94.5, clients:4.67},
@@ -426,9 +426,9 @@ const MANAGERS = [
   {name:"Афанасьева Ангелина",    r:"Сибай",        speed_delivery:15.57,  speed_hall:14.46,  problem:5, productivity:8.1, cx:83.25, clients:4.73},
   {name:"Истамгулова Диля",       r:"Сибай",        speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
   {name:"Султанова Диана",        r:"Сибай",        speed_delivery:15.57,  speed_hall:14.46,  problem:2, productivity:7.9, cx:83.25, clients:4.97},
-  {name:"Волкодав Лейля",         r:"Белебей",      speed_delivery:13.13,  speed_hall:11.14,  problem:2, productivity:8.1, cx:97, clients:4.71},
+  {name:"Волкодав Лейля",         r:"Белебей",      speed_delivery:13.13,  speed_hall:11.14,  problem:2, productivity:8.1, cx:97.5, clients:4.71},
   {name:"Воронова Надежда",       r:"Белебей",      speed_delivery:null, speed_hall:null, problem:null, productivity:null,  cx:null,   clients:null},
-  {name:"Галлямов Ильнур",        r:"Белебей",      speed_delivery:13.13,  speed_hall:11.14,  problem:1, productivity:6.6, cx:97, clients:4.88},
+  {name:"Галлямов Ильнур",        r:"Белебей",      speed_delivery:13.13,  speed_hall:11.14,  problem:1, productivity:6.6, cx:97.5, clients:4.88},
 ];
 
 const METRICS = {
